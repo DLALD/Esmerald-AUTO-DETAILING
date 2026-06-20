@@ -1416,10 +1416,21 @@ a { text-decoration: none; color: inherit; }
     padding: 18px 18px 16px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 10px;
     border-right: none;
     border-bottom: 1px solid #222;
+  }
+
+  .package-name,
+  .package-price,
+  .package-duration {
+    width: 100%;
+  }
+
+  .package-price {
+    text-align: center;
   }
 
   .package-features {
@@ -1463,7 +1474,8 @@ a { text-decoration: none; color: inherit; }
     padding: 18px 18px 16px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 10px;
     border-right: none;
     border-bottom: 1px solid #222;
@@ -1477,6 +1489,8 @@ a { text-decoration: none; color: inherit; }
   .package-name { font-size: 1.05rem; }
   .package-price { font-size: 1.7rem; }
   .package-duration { font-size: 0.7rem; }
+
+  .package-price { text-align: center; }
 
   .package-features {
     padding: 16px;
@@ -1524,8 +1538,24 @@ a { text-decoration: none; color: inherit; }
     width: 95%;
     max-width: 95%;
     max-height: calc(100vh - 32px);
-    overflow: auto;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    padding-bottom: 24px;
+  }
+
+  .modal-slider,
+  .modal-info,
+  .modal-form {
+    min-height: auto;
+  }
+
+  .modal-close {
+    z-index: 30;
+  }
+
+  .modal-backdrop {
+    align-items: flex-start;
+    padding-top: 18px;
   }
 
   .modal-slider {
