@@ -977,6 +977,8 @@ a { text-decoration: none; color: inherit; }
   max-width: 780px;
   max-height: 95vh;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   position: relative;
   transform: scale(0.85);
   transform-origin: var(--origin-x, 50%) var(--origin-y, 50%);
@@ -1146,8 +1148,11 @@ a { text-decoration: none; color: inherit; }
 /* Quote form */
 .modal-form {
   display: none;
-  padding: 22px 28px 26px;
+  padding: 22px 28px 150px 28px;
   border-top: 1px solid #222;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 .modal-form.active { display: block; }
@@ -1198,6 +1203,12 @@ a { text-decoration: none; color: inherit; }
   gap: 8px;
   margin-top: 4px;
   flex-wrap: wrap;
+  position: sticky;
+  bottom: 0;
+  z-index: 12;
+  background: linear-gradient(180deg, rgba(17,17,17,0), rgba(17,17,17,0.96));
+  padding: 10px 0 10px;
+  margin-bottom: -10px;
 }
 
 .form-actions button[type="button"] {
