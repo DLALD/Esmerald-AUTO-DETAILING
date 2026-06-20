@@ -976,7 +976,7 @@ a { text-decoration: none; color: inherit; }
   width: 90%;
   max-width: 780px;
   max-height: 95vh;
-  overflow: auto;
+  overflow-y: auto;
   position: relative;
   transform: scale(0.85);
   transform-origin: var(--origin-x, 50%) var(--origin-y, 50%);
@@ -1090,6 +1090,7 @@ a { text-decoration: none; color: inherit; }
 /* Modal info */
 .modal-info {
   padding: 22px 28px 26px;
+  padding-bottom: 110px;
 }
 
 .modal-info h3 {
@@ -1131,7 +1132,16 @@ a { text-decoration: none; color: inherit; }
   animation: captionIn 0.4s ease;
 }
 
-.modal-btn { margin-top: 0; }
+.modal-btn {
+  margin-top: 0;
+  position: sticky;
+  bottom: 18px;
+  z-index: 10;
+  display: block;
+  width: calc(100% - 56px);
+  max-width: 320px;
+  margin: 0 auto 18px;
+}
 
 /* Quote form */
 .modal-form {
