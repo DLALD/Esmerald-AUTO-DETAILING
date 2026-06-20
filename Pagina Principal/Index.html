@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emerald Auto Detailing</title>
+  <link rel="icon" type="image/png" href="../Logos/logo.png" />
+  <link rel="stylesheet" href="Index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <img src="../Logos/logo.png" alt="Emerald Auto Detailing" />
+      </a>
+      <nav class="nav-links">
+        <a href="#home" class="nav-link">Home</a>
+        <div class="nav-dropdown">
+          <a href="#services" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <a href="#services" data-service="basic"><i class="fas fa-car-side"></i> Basic — $65</a>
+            <a href="#services" data-service="enhanced"><i class="fas fa-shield-halved"></i> Enhanced — $80</a>
+            <a href="#services" data-service="emerald"><i class="fas fa-gem"></i> Emerald Experience — $100</a>
+          </div>
+        </div>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-icons">
+        <a href="https://www.instagram.com/emerald_autodetailing11/" class="btn-book" target="_blank">Book Now</a>
+        <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO SLIDER -->
+  <section class="hero" id="home">
+    <div class="hero-slides">
+      <div class="slide logo-slide active" data-sub="WELCOME TO EMERALD AUTO DETAILING" data-title="The Difference Is in the <span>Details</span>" data-btn="Our Services">
+        <img src="../Logos/logo.png" alt="Emerald Auto Detailing" />
+      </div>
+      <div class="slide" style="background-image: url('Imagenes de fondo/1.jpg')" data-sub="PROFESSIONAL RESULTS, EVERY TIME" data-title="We Wash Your Car in <span>Under 15 Minutes</span>" data-btn="Book Now"></div>
+      <div class="slide" style="background-image: url('Imagenes de fondo/2.jpg')" data-sub="PREMIUM CARE FOR YOUR VEHICLE" data-title="Showroom Shine <span>Guaranteed</span>" data-btn="See Our Services"></div>
+      <div class="slide" style="background-image: url('Imagenes de fondo/3.jpg')" data-sub="FIRST-TIME CUSTOMERS" data-title="Get <span>15% OFF</span> Your First Detail" data-btn="Claim Offer"></div>
+      <div class="slide" style="background-image: url('Our services/Exterior Wash/Imagenes/1.jpg')" data-sub="EXTERIOR WASH" data-title="A Spotless Exterior <span>From Top to Bottom</span>" data-btn="Book Exterior Wash"></div>
+      <div class="slide" style="background-image: url('Our services/Exterior Wash/Imagenes/2.jpg')" data-sub="HAND WASH &amp; DRY" data-title="No Brushes. <span>Just Hands &amp; Care.</span>" data-btn="Learn More"></div>
+      <div class="slide" style="background-image: url('Our services/Exterior Wash/Imagenes/3.jpg')" data-sub="TIRE &amp; RIM SHINE" data-title="Every Detail <span>Makes the Difference</span>" data-btn="Book Now"></div>
+      <div class="slide" style="background-image: url('Our services/Interior Detailing/imagenes/1.jpeg')" data-sub="INTERIOR DETAILING" data-title="Your Cabin, <span>Fresh &amp; Immaculate</span>" data-btn="Book Interior Detail"></div>
+      <div class="slide" style="background-image: url('Our services/Interior Detailing/imagenes/2.jpg')" data-sub="DEEP CLEAN &amp; STEAM" data-title="We Remove Every <span>Stain &amp; Odor</span>" data-btn="Learn More"></div>
+      <div class="slide" style="background-image: url('Our services/Interior Detailing/imagenes/3.jpg')" data-sub="LEATHER &amp; DASHBOARD CARE" data-title="Condition, Polish <span>&amp; Protect</span>" data-btn="Book Now"></div>
+      <div class="slide" style="background-image: url('Our services/Wheel Care/imagenes/1.jpg')" data-sub="WHEEL CARE" data-title="Clean Wheels, <span>Proud Driver</span>" data-btn="Book Wheel Care"></div>
+      <div class="slide" style="background-image: url('Our services/Wheel Care/imagenes/2.jpg')" data-sub="BRAKE DUST REMOVAL" data-title="Deep Clean for <span>Every Rim</span>" data-btn="Learn More"></div>
+      <div class="slide" style="background-image: url('Our services/Wheel Care/imagenes/3.jpg')" data-sub="TIRE DRESSING &amp; COATING" data-title="Protected Wheels <span>That Last</span>" data-btn="Book Now"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-sub" id="heroSub"></span>
+      <h1 id="heroTitle"></h1>
+      <a href="#services" class="btn-primary" id="heroBtn"></a>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+    <button class="hero-arrow left" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
+    <button class="hero-arrow right" id="heroNext"><i class="fas fa-chevron-right"></i></button>
+  </section>
+
+  <!-- PROMO BANNER -->
+  <div class="promo-banner">
+    <p>🚗 First-Time Customers Get <strong>15% OFF</strong> — <a href="#contact">Book Here</a></p>
+  </div>
+
+  <!-- SERVICES / PRICING -->
+  <section class="services" id="services">
+    <div class="services-header">
+      <p class="services-tagline">MORE THAN CLEAN. IT'S A <span>STANDARD.</span></p>
+      <h2>Detail Pricing</h2>
+    </div>
+
+    <div class="packages">
+
+      <!-- BASIC -->
+      <div class="package-card" data-service="basic" data-price="65"
+        data-images="Services/Basic/1.jpg|Services/Basic/2.jpg|Services/Basic/3.jpg|Services/Basic/4.jpg"
+        data-before="Our services/Exterior Wash/Imagenes/4.jpg"
+        data-after="Our services/Exterior Wash/Imagenes/5.jpg"
+        data-title="Basic Detail"
+        data-desc="Perfect for a quick refresh. Interior vacuum and basic wipe down plus exterior foam blast."
+        data-captions="Foam Blast from Top to Bottom|Spotless Exterior in 45 Minutes|Tire Shine Included|Quick & Efficient Wash"
+        data-highlights="Interior: Vacuum, Dog/Cat hair removal|Basic interior wipe down (spray &amp; wipe)|Exterior: Spray down, foam blaster|Duration: 45 minutes">
+        <div class="package-left">
+          <div class="package-icon"><img src="../Logos/exterior.png" alt="Basic" /></div>
+          <div class="package-title-wrap">
+            <h3 class="package-name">BASIC</h3>
+            <div class="package-price"><span class="dollar">$</span>65</div>
+            <span class="package-duration">45 MINUTES</span>
+          </div>
+        </div>
+        <div class="package-features">
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Interior: Vacuum, Dog/Cat hair removal, basic interior wipe down (spray &amp; wipe)</span></div>
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster</span></div>
+        </div>
+        <div class="package-img" style="background-image: url('Services/Basic/1.jpg')"></div>
+        <button class="pkg-btn">Book Now</button>
+      </div>
+
+      <!-- ENHANCED -->
+      <div class="package-card featured" data-service="enhanced" data-price="80"
+        data-images="Services/Enhanced/1.jpg|Services/Enhanced/2.jpg|Services/Enhanced/3.jpg|Services/Enhanced/4.webp"
+        data-before="Our services/Interior Detailing/imagenes/4.png"
+        data-after="Our services/Interior Detailing/imagenes/5.png"
+        data-desc="A thorough clean inside and out with carpet care, odor elimination and rim treatment."
+        data-captions="Deep Interior Vacuum & Hair Removal|Carpet Cleaner & Odor Elimination|Foam Blast + Rim & Tire Treatment|Advanced Interior Wipe Down"
+        data-highlights="Interior: Vacuum, hair removal, carpet cleaner|Advanced interior wipe down, odor elimination|Exterior: Spray down, foam blaster|Rim &amp; Tire treatment — 1h 45min">
+        <div class="pkg-badge">MOST POPULAR</div>
+        <div class="package-left">
+          <div class="package-icon purple"><img src="../Logos/enhanced.png" alt="Enhanced" /></div>
+          <div class="package-title-wrap">
+            <h3 class="package-name purple">ENHANCED</h3>
+            <div class="package-price"><span class="dollar">$</span>80</div>
+            <span class="package-duration">1 HOUR 45 MIN</span>
+          </div>
+        </div>
+        <div class="package-features">
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Interior: Vacuum, hair removal, carpet cleaner, advanced interior wipe down, odor elimination</span></div>
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster, Rim &amp; Tire treatment</span></div>
+        </div>
+        <div class="package-img" style="background-image: url('Services/Enhanced/1.jpg')"></div>
+        <button class="pkg-btn">Book Now</button>
+      </div>
+
+      <!-- EMERALD EXPERIENCE -->
+      <div class="package-card premium" data-service="emerald" data-price="100"
+        data-images="Services/Esmerald Experience/1.jpg|Services/Esmerald Experience/2.jpg|Services/Esmerald Experience/3.webp|Services/Esmerald Experience/4.jpg|Services/Esmerald Experience/5.jpg"
+        data-before="Our services/Wheel Care/imagenes/5.jpg"
+        data-after="Our services/Wheel Care/imagenes/4.jpg"
+        data-title="Emerald Experience"
+        data-desc="The ultimate detail. Full steam clean, leather conditioning, deep wash and complete dry off."
+        data-captions="Leather Seat Condition & Wax|Steam Cleaning — Every Corner|Deep Wash & Complete Dry Off|Carpet & Seat Extraction|Showroom Finish Guaranteed"
+        data-highlights="Interior: Vacuum, hair removal, carpet &amp; seat extraction|Deep clean wipe down, seat condition &amp; wax (LEATHER ONLY)|Odor elimination, steam cleaning|Exterior: Deep wash, Rim &amp; Tire treatment, complete dry off — 2 hours">
+        <div class="pkg-badge emerald-badge">PREMIUM</div>
+        <div class="package-left">
+          <div class="package-icon green"><img src="../Logos/experience.png" alt="Emerald Experience" /></div>
+          <div class="package-title-wrap">
+            <h3 class="package-name green">EMERALD<br>EXPERIENCE</h3>
+            <div class="package-price green"><span class="dollar">$</span>100</div>
+            <span class="package-duration">2 HOURS</span>
+          </div>
+        </div>
+        <div class="package-features">
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Interior: Vacuum, hair removal, carpet &amp; seat extraction, deep clean wipe down, seat condition &amp; wax (LEATHER SEATS ONLY), odor elimination, steam cleaning</span></div>
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster, deep wash, Rim &amp; Tire treatment, complete dry off</span></div>
+        </div>
+        <div class="package-img" style="background-image: url('Services/Esmerald Experience/1.jpg')"></div>
+        <button class="pkg-btn">Book Now</button>
+      </div>
+
+    </div>
+
+    <!-- BEFORE / AFTER -->
+    <div class="beforeafter-wrap">
+      <p class="services-tagline" style="text-align:center;margin-bottom:16px">DRAG TO REVEAL &middot; <span>BEFORE &amp; AFTER</span></p>
+
+      <div class="ba-tabs">
+        <button class="ba-tab active" data-ba="interior">Interior Detailing</button>
+        <button class="ba-tab" data-ba="exterior">Exterior Wash</button>
+        <button class="ba-tab" data-ba="wheel">Wheel Care</button>
+      </div>
+
+      <!-- Interior -->
+      <div class="ba-container active" id="baContainer" data-ba="interior">
+        <div class="ba-after" style="background-image:url('Our services/Interior Detailing/imagenes/5.png')"></div>
+        <div class="ba-before" style="background-image:url('Our services/Interior Detailing/imagenes/4.png')" id="baBefore"></div>
+        <div class="ba-divider" id="baDivider"><div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div></div>
+        <span class="ba-label left">BEFORE</span>
+        <span class="ba-label right">AFTER</span>
+      </div>
+
+      <!-- Exterior -->
+      <div class="ba-container" id="baContainerExt" data-ba="exterior">
+        <div class="ba-after" style="background-image:url('Our services/Exterior Wash/Imagenes/5.jpg')"></div>
+        <div class="ba-before" style="background-image:url('Our services/Exterior Wash/Imagenes/4.jpg')" id="baBeforeExt"></div>
+        <div class="ba-divider" id="baDividerExt"><div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div></div>
+        <span class="ba-label left">BEFORE</span>
+        <span class="ba-label right">AFTER</span>
+      </div>
+
+      <!-- Wheel -->
+      <div class="ba-container" id="baContainerWheel" data-ba="wheel">
+        <div class="ba-after" style="background-image:url('Our services/Wheel Care/imagenes/4.jpg')"></div>
+        <div class="ba-before" style="background-image:url('Our services/Wheel Care/imagenes/5.jpg')" id="baBeforeWheel"></div>
+        <div class="ba-divider" id="baDividerWheel"><div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div></div>
+        <span class="ba-label left">BEFORE</span>
+        <span class="ba-label right">AFTER</span>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM STRIP -->
+    <div class="services-strip">
+      <p class="strip-tagline">EVERY DETAIL MATTERS</p>
+      <div class="strip-items">
+        <div class="strip-item">
+          <div class="strip-img" style="background-image: url('Our services/Exterior Wash/Imagenes/1.jpg')"></div>
+          <div class="strip-label green"><i class="fas fa-car-side"></i> EXTERIOR WASH</div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-img" style="background-image: url('Our services/Interior Detailing/imagenes/1.jpeg')"></div>
+          <div class="strip-label purple"><i class="fas fa-couch"></i> INTERIOR DETAILING</div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-img" style="background-image: url('Our services/Wheel Care/imagenes/1.jpg')"></div>
+          <div class="strip-label green"><i class="fas fa-circle-dot"></i> WHEEL CARE</div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-img" style="background-image: url('Our services/Wheel Care/imagenes/2.jpg')"></div>
+          <div class="strip-label purple"><i class="fas fa-shield-halved"></i> EXPERT FINISH</div>
+        </div>
+      </div>
+      <p class="strip-footer">REFINE &nbsp;•&nbsp; PROTECT &nbsp;•&nbsp; ELEVATE</p>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p>Professional auto detailing services across the USA. We make your car shine like new.</p>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay Updated</h4>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" />
+          <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/emerald_autodetailing11/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026, Emerald Auto Detailing · <a href="#">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <!-- INSTAGRAM FLOAT -->
+  <a href="https://www.instagram.com/emerald_autodetailing11/" class="whatsapp-float" target="_blank">
+    <i class="fab fa-instagram"></i> Book on Instagram
+  </a>
+
+  <!-- SERVICE MODAL -->
+  <div class="modal-backdrop" id="serviceModal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      <div class="modal-slider">
+        <div class="modal-slides" id="modalSlides"></div>
+        <button class="modal-arrow left" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="modal-arrow right" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="modal-dots" id="modalDots"></div>
+        <div class="modal-caption" id="modalCaption"></div>
+        <!-- BA inside modal -->
+        <div class="modal-ba-slider" id="modalBASlider" style="display:none">
+          <div class="ba-after" id="modalBAAfter"></div>
+          <div class="ba-before" id="modalBABefore"></div>
+          <div class="ba-divider" id="modalBADivider"><div class="ba-handle"><i class="fas fa-arrows-left-right"></i></div></div>
+          <span class="ba-label left">BEFORE</span>
+          <span class="ba-label right">AFTER</span>
+        </div>
+      </div>
+      <div class="modal-info">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <ul class="modal-highlights" id="modalHighlights"></ul>
+
+        <!-- Before/After toggle -->
+        <div class="modal-ba-wrap" id="modalBAWrap">
+          <button class="modal-ba-tab" id="modalBABtn" data-view="gallery"><i class="fas fa-arrows-left-right"></i> Before &amp; After</button>
+        </div>
+
+        <div class="modal-price">
+          <span class="modal-price-label">STARTING AT</span>
+          <span class="modal-price-amount"><span class="dollar">$</span><span id="modalPrice">65</span> <em>USD</em></span>
+        </div>
+        <button class="btn-primary modal-btn" id="modalBookBtn">Book This Service</button>
+      </div>
+      <!-- QUOTE FORM -->
+      <div class="modal-form" id="modalForm">
+        <h4>Request a Quote</h4>
+        <form id="quoteForm">
+          <div class="form-row">
+            <input type="text" id="qName" placeholder="Your Name" required />
+            <input type="tel" id="qPhone" placeholder="Your Phone" required />
+          </div>
+          <div class="form-row">
+            <input type="text" id="qCar" placeholder="Car Make &amp; Model (e.g. Toyota Camry)" required />
+            <input type="text" id="qYear" placeholder="Year" required />
+          </div>
+          <select id="qTime">
+            <option value="">Preferred Time</option>
+            <option>Morning (8am – 12pm)</option>
+            <option>Afternoon (12pm – 4pm)</option>
+            <option>Evening (4pm – 7pm)</option>
+          </select>
+          <textarea id="qNotes" placeholder="Additional notes (optional)" rows="2"></textarea>
+          <div class="form-actions">
+            <button type="button" id="formBack"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
+          </div>
+        </form>
+        <!-- Copy message step -->
+        <div class="form-copy" id="formCopy">
+          <p class="copy-instruction"><i class="fas fa-circle-check"></i> Your quote is ready! Choose how to send it:</p>
+          <textarea class="copy-box" id="copyBox" readonly rows="7"></textarea>
+          <div class="form-actions">
+            <button type="button" id="copyBtn"><i class="fas fa-copy"></i> Copy</button>
+            <a href="https://www.instagram.com/emerald_autodetailing11/" class="btn-primary" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a id="smsBtn" class="btn-primary" target="_blank"><i class="fas fa-comment-sms"></i> iMessage <span class="mobile-only-tag"><i class="fab fa-apple"></i><i class="fab fa-android"></i> Mobile Only</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="Index.js"></script>
+</body>
+</html>
