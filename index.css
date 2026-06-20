@@ -973,10 +973,11 @@ a { text-decoration: none; color: inherit; }
   background: var(--dark2);
   border: 1px solid #333;
   border-radius: 14px;
-  width: 90%;
-  max-width: 780px;
-  max-height: 95vh;
+  width: 84%;
+  max-width: 640px;
+  max-height: 84vh;
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
   position: relative;
@@ -1092,7 +1093,18 @@ a { text-decoration: none; color: inherit; }
 /* Modal info */
 .modal-info {
   padding: 22px 28px 26px;
-  padding-bottom: 110px;
+}
+
+.modal-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 20;
+  background: linear-gradient(180deg, rgba(17,17,17,0), rgba(17,17,17,0.98));
+  padding: 12px 22px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
 }
 
 .modal-info h3 {
@@ -1136,19 +1148,16 @@ a { text-decoration: none; color: inherit; }
 
 .modal-btn {
   margin-top: 0;
-  position: sticky;
-  bottom: 18px;
-  z-index: 10;
-  display: block;
-  width: calc(100% - 56px);
-  max-width: 320px;
-  margin: 0 auto 18px;
+  display: inline-flex;
+  width: 100%;
+  max-width: 280px;
+  justify-content: center;
 }
 
 /* Quote form */
 .modal-form {
   display: none;
-  padding: 22px 28px 150px 28px;
+  padding: 22px 28px 160px 28px;
   border-top: 1px solid #222;
   position: relative;
   -webkit-overflow-scrolling: touch;
@@ -1203,12 +1212,10 @@ a { text-decoration: none; color: inherit; }
   gap: 8px;
   margin-top: 4px;
   flex-wrap: wrap;
-  position: sticky;
-  bottom: 0;
-  z-index: 12;
-  background: linear-gradient(180deg, rgba(17,17,17,0), rgba(17,17,17,0.96));
-  padding: 10px 0 10px;
-  margin-bottom: -10px;
+  position: relative;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .form-actions button[type="button"] {
