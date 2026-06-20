@@ -70,6 +70,16 @@ const heroBtn     = document.getElementById('heroBtn');
 let current = 0;
 let timer;
 
+slides.forEach(slide => {
+  if (slide.dataset.bg) {
+    if (slide.classList.contains('active')) {
+      slide.style.backgroundImage = `url('${slide.dataset.bg}')`;
+    } else {
+      slide.style.backgroundImage = '';
+    }
+  }
+});
+
 // Build dots dynamically
 slides.forEach((_, i) => {
   const dot = document.createElement('span');
@@ -96,6 +106,10 @@ function goTo(index) {
   slides[current].classList.remove('active');
   dots[current].classList.remove('active');
   current = index;
+  const nextSlide = slides[current];
+  if (nextSlide.dataset.bg && !nextSlide.style.backgroundImage) {
+    nextSlide.style.backgroundImage = `url('${nextSlide.dataset.bg}')`;
+  }
   slides[current].classList.add('active');
   dots[current].classList.add('active');
   updateText(index);
@@ -121,6 +135,7 @@ const modalDesc   = document.getElementById('modalDesc');
 const modalPrev   = document.getElementById('modalPrev');
 const modalNext   = document.getElementById('modalNext');
 const modalBox    = modal.querySelector('.modal-box');
+const modalFooter = modal.querySelector('.modal-footer');
 
 let mCurrent  = 0;
 let mImages   = [];
@@ -298,6 +313,7 @@ function closeModal() {
   document.getElementById('formCopy').classList.remove('active');
   document.getElementById('quoteForm').style.display = '';
   document.querySelector('.modal-info').style.display = '';
+  if (modalFooter) modalFooter.style.display = '';
 }
 
 modalClose.addEventListener('click', closeModal);
@@ -308,12 +324,14 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 document.getElementById('modalBookBtn').addEventListener('click', () => {
   document.querySelector('.modal-info').style.display = 'none';
   document.getElementById('modalForm').classList.add('active');
+  if (modalFooter) modalFooter.style.display = 'none';
 });
 
 // Back button — hide form
 document.getElementById('formBack').addEventListener('click', () => {
   document.getElementById('modalForm').classList.remove('active');
   document.querySelector('.modal-info').style.display = '';
+  if (modalFooter) modalFooter.style.display = '';
 });
 
 // Submit form — build iMessage

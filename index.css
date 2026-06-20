@@ -975,12 +975,13 @@ a { text-decoration: none; color: inherit; }
   border-radius: 14px;
   width: 84%;
   max-width: 640px;
-  max-height: 84vh;
+  max-height: 82vh;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
   position: relative;
+  padding-bottom: 90px;
   transform: scale(0.85);
   transform-origin: var(--origin-x, 50%) var(--origin-y, 50%);
   opacity: 0;
@@ -1017,7 +1018,7 @@ a { text-decoration: none; color: inherit; }
 /* Slider inside modal */
 .modal-slider {
   position: relative;
-  height: 420px;
+  height: 360px;
   overflow: hidden;
 }
 
@@ -1099,12 +1100,13 @@ a { text-decoration: none; color: inherit; }
   position: sticky;
   bottom: 0;
   z-index: 20;
-  background: linear-gradient(180deg, rgba(17,17,17,0), rgba(17,17,17,0.98));
-  padding: 12px 22px 14px;
+  background: rgba(17,17,17,0.96);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 .modal-info h3 {
@@ -1157,7 +1159,7 @@ a { text-decoration: none; color: inherit; }
 /* Quote form */
 .modal-form {
   display: none;
-  padding: 22px 28px 160px 28px;
+  padding: 22px 28px 180px 28px;
   border-top: 1px solid #222;
   position: relative;
   -webkit-overflow-scrolling: touch;
@@ -1210,12 +1212,13 @@ a { text-decoration: none; color: inherit; }
 .form-actions {
   display: flex;
   gap: 8px;
-  margin-top: 4px;
+  margin: 0;
   flex-wrap: wrap;
-  position: relative;
-  background: transparent;
-  padding: 0;
-  margin-bottom: 0;
+  position: sticky;
+  bottom: 86px;
+  z-index: 22;
+  background: linear-gradient(180deg, rgba(17,17,17,0), rgba(17,17,17,0.96));
+  padding: 12px 0 10px;
 }
 
 .form-actions button[type="button"] {
@@ -1568,7 +1571,7 @@ a { text-decoration: none; color: inherit; }
     max-height: calc(100vh - 32px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: 24px;
+    padding-bottom: 120px;
   }
 
   .modal-slider,
@@ -1587,11 +1590,23 @@ a { text-decoration: none; color: inherit; }
   }
 
   .modal-slider {
-    height: 320px;
+    height: 280px;
   }
 
   .modal-info {
     padding: 18px 20px 26px;
+  }
+
+  .modal-box {
+    max-height: calc(100vh - 20px);
+  }
+
+  .modal-form {
+    padding: 18px 18px 120px;
+  }
+
+  .form-actions {
+    padding: 12px 0 10px;
   }
 
   .modal-arrow {
