@@ -342,6 +342,21 @@ document.getElementById('formBack').addEventListener('click', () => {
 // Submit form — build iMessage
 document.getElementById('quoteForm').addEventListener('submit', e => {
   e.preventDefault();
+
+  const dateVal = document.getElementById('selectedDate').value;
+  const timeVal = document.getElementById('selectedTime').value;
+
+  if (!dateVal) {
+    alert('Please select a date for your service.');
+    document.getElementById('dateTrigger').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  if (!timeVal) {
+    alert('Please select a preferred time.');
+    document.getElementById('timeSlotWrap').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
   const service = modalTitle.textContent;
   const name    = document.getElementById('qName').value;
   const phone   = document.getElementById('qPhone').value;
@@ -360,13 +375,13 @@ Car: ${year} ${car}
 Preferred Date: ${date}
 Preferred Time: ${time}${notes ? '\nNotes: ' + notes : ''}`;
 
-  document.getElementById('copyBox').value = msg;
+ document.getElementById('copyBox').value = msg;
   document.getElementById('quoteForm').style.display = 'none';
   document.getElementById('formCopy').classList.add('active');
 
-  const smsBtn = document.getElementById('smsBtn');
-  smsBtn.href = 'sms:+19203787005?body=' + encodeURIComponent(msg);
-  smsBtn.addEventListener('click', function(e) {
+const smsBtnBoth = document.getElementById('smsBtnBoth');
+  smsBtnBoth.href = 'sms:+19203787005,+12742279401?body=' + encodeURIComponent(msg);
+  smsBtnBoth.addEventListener('click', function(e) {
     e.preventDefault();
     window.location.href = this.href;
   }, { once: true });

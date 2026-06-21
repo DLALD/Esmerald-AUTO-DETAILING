@@ -71,23 +71,6 @@
     <button class="hero-arrow left" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
     <button class="hero-arrow right" id="heroNext"><i class="fas fa-chevron-right"></i></button>
   </section>
-<!-- VIDEO SHOWCASE -->
-  <section class="video-showcase">
-    <div class="video-showcase-inner">
-      <p class="services-tagline" style="text-align:center;">SEE IT FOR YOURSELF · <span>REAL DETAIL, REAL TIME</span></p>
-      <h2 class="video-title">Watch Us In Action</h2>
-      <div class="video-frame">
-        <iframe
-          src="https://www.youtube.com/embed/1czZxMJOf4w"
-          title="Emerald Auto Detailing in action"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
-  </section>
   <!-- SERVICES / PRICING -->
   <section class="services" id="services">
     <div class="services-header">
@@ -319,14 +302,14 @@
               </div>
               <div class="qc-days" id="qcDays"></div>
             </div>
-            <input type="hidden" id="selectedDate" name="selectedDate" required>
+           <input type="hidden" id="selectedDate" name="selectedDate">
           </div>
 
          <div class="form-field" id="timeSlotWrap" style="display:none;">
             <label class="field-label">Preferred Time</label>
             <div class="time-slots" id="timeSlots"></div>
             <p class="time-disclaimer"><i class="fas fa-circle-info"></i> Exact start time is subject to confirmation based on technician availability.</p>
-            <input type="hidden" id="selectedTime" name="selectedTime" required>
+           <input type="hidden" id="selectedTime" name="selectedTime">
           </div>
           <textarea id="qNotes" placeholder="Additional notes (optional)" rows="2"></textarea>
           <div class="form-actions">
@@ -342,7 +325,7 @@
             <button type="button" id="copyBtn" class="glow-on-hover"><i class="fas fa-copy"></i> Copy</button>
             <a href="https://www.facebook.com/share/18xFt5k7B8/?mibextid=wwXIfr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
             <a href="https://www.instagram.com/emerald_autodetailing12?igsh=ZHlkOWl3OHluODk2&utm_source=qr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a id="smsBtn" class="btn-primary glow-on-hover" target="_blank"><i class="fas fa-comment-sms"></i> iMessage <span class="mobile-only-tag"><i class="fab fa-apple"></i><i class="fab fa-android"></i> Mobile Only</span></a>
+            <a id="smsBtnBoth" class="btn-primary glow-on-hover" target="_blank"><i class="fas fa-comment-sms"></i> Send SMS <span class="mobile-only-tag"><i class="fab fa-apple"></i><i class="fab fa-android"></i> Mobile Only</span></a>
           </div>
         </div>
       </div>
