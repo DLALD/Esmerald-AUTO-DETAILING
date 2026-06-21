@@ -81,7 +81,7 @@
     <div class="packages">
 
       <!-- BASIC -->
-      <div class="package-card" data-service="basic" data-price="65"
+      <div class="package-card" data-service="basic" data-price="65" data-duration="45"
         data-images="Services/Basic/1.jpg|Services/Basic/2.jpg|Services/Basic/3.jpg|Services/Basic/4.jpg"
         data-before="Our services/Exterior Wash/Imagenes/4.jpg"
         data-after="Our services/Exterior Wash/Imagenes/5.jpg"
@@ -106,7 +106,7 @@
       </div>
 
       <!-- ENHANCED -->
-      <div class="package-card featured" data-service="enhanced" data-price="80"
+      <div class="package-card featured" data-service="enhanced" data-price="80" data-duration="105"
         data-images="Services/Enhanced/1.jpg|Services/Enhanced/2.jpg|Services/Enhanced/3.jpg|Services/Enhanced/4.webp"
         data-before="Our services/Interior Detailing/imagenes/4.png"
         data-after="Our services/Interior Detailing/imagenes/5.png"
@@ -131,8 +131,8 @@
         <button class="pkg-btn glow-on-hover">Book Now</button>
       </div>
 
-      <!-- EMERALD EXPERIENCE -->
-      <div class="package-card premium" data-service="emerald" data-price="100"
+     <!-- EMERALD EXPERIENCE -->
+      <div class="package-card premium" data-service="emerald" data-price="100" data-duration="120"
         data-images="Services/Esmerald Experience/1.jpg|Services/Esmerald Experience/2.jpg|Services/Esmerald Experience/3.webp|Services/Esmerald Experience/4.jpg|Services/Esmerald Experience/5.jpg"
         data-before="Our services/Wheel Care/imagenes/5.jpg"
         data-after="Our services/Wheel Care/imagenes/4.jpg"
@@ -305,9 +305,10 @@
             <input type="hidden" id="selectedDate" name="selectedDate" required>
           </div>
 
-          <div class="form-field" id="timeSlotWrap" style="display:none;">
+         <div class="form-field" id="timeSlotWrap" style="display:none;">
             <label class="field-label">Preferred Time</label>
             <div class="time-slots" id="timeSlots"></div>
+            <p class="time-disclaimer"><i class="fas fa-circle-info"></i> Exact start time is subject to confirmation based on technician availability.</p>
             <input type="hidden" id="selectedTime" name="selectedTime" required>
           </div>
           <textarea id="qNotes" placeholder="Additional notes (optional)" rows="2"></textarea>

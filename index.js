@@ -530,7 +530,7 @@ function toMinutes(h, m) { return h * 60 + m; }
     return `${h}:${String(m).padStart(2, '0')} ${ampm}`;
   }
 
-  function renderTimeSlots(date) {
+ function renderTimeSlots(date) {
     const dateStr = fmt(date);
     const day = date.getDay();
     const festivo = isFestivo(dateStr);
@@ -554,26 +554,45 @@ function toMinutes(h, m) { return h * 60 + m; }
     selectedTimeInput.value = '';
 
     periods.forEach(period => {
-      const windowLen = period.end - period.start;
-      const fits = duration <= windowLen;
-      const rangeLabel = `${formatTime(period.start)} – ${formatTime(period.end)}`;
-
-      const chip = document.createElement('div');
-      chip.className = 'time-chip' + (fits ? '' : ' disabled');
-
-      if (fits) {
-        const finishExample = formatTime(period.start + duration);
-        chip.innerHTML = `<strong>${period.label}</strong>${rangeLabel}<small>Est. finish by ${finishExample}</small>`;
-        chip.addEventListener('click', () => {
-          document.querySelectorAll('.time-chip.selected').forEach(c => c.classList.remove('selected'));
-          chip.classList.add('selected');
-          selectedTimeInput.value = `${period.label} (${rangeLabel})`;
-        });
-      } else {
-        chip.innerHTML = `<strong>${period.label}</strong>${rangeLabel}<small>Not enough time for this service</small>`;
+      // Generar horarios de inicio cada hora en punto dentro de la franja
+      const starts = [];
+      for (let t = period.start; t + duration <= period.end; t += 60) {
+        starts.push(t);
       }
 
-      timeSlotsEl.appendChild(chip);
+      const group = document.createElement('div');
+      group.className = 'time-period-group';
+
+      const groupLabel = document.createElement('div');
+      groupLabel.className = 'time-period-label';
+      groupLabel.textContent = `${period.label} (${formatTime(period.start)} – ${formatTime(period.end)})`;
+      group.appendChild(groupLabel);
+
+      const optionsWrap = document.createElement('div');
+      optionsWrap.className = 'time-options';
+
+      if (starts.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'time-chip disabled';
+        empty.innerHTML = `<small>Not enough time for this service in this window</small>`;
+        optionsWrap.appendChild(empty);
+      } else {
+        starts.forEach(start => {
+          const end = start + duration;
+          const chip = document.createElement('div');
+          chip.className = 'time-chip';
+          chip.innerHTML = `<strong>Start at ${formatTime(start)}</strong>Ends approx. ${formatTime(end)}`;
+          chip.addEventListener('click', () => {
+            document.querySelectorAll('.time-chip.selected').forEach(c => c.classList.remove('selected'));
+            chip.classList.add('selected');
+            selectedTimeInput.value = `${period.label} — Start ${formatTime(start)} (ends approx. ${formatTime(end)}, subject to confirmation)`;
+          });
+          optionsWrap.appendChild(chip);
+        });
+      }
+
+      group.appendChild(optionsWrap);
+      timeSlotsEl.appendChild(group);
     });
 
     timeSlotWrap.style.display = 'block';

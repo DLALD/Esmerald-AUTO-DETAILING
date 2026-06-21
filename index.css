@@ -1872,13 +1872,13 @@ a { text-decoration: none; color: inherit; }
 
 .time-chip {
   flex: 1 1 auto;
-  min-width: 130px;
+  min-width: 110px;
   background: #111;
   border: 1px solid #2a2a2a;
   color: var(--gray);
-  padding: 12px 14px;
+  padding: 10px 12px;
   border-radius: 10px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   cursor: pointer;
   text-align: left;
   transition: border-color 0.2s, background 0.2s, color 0.2s;
@@ -1917,6 +1917,45 @@ a { text-decoration: none; color: inherit; }
 
 .time-chip.disabled small {
   color: #c0392b;
+}
+
+.time-period-group {
+  margin-bottom: 16px;
+}
+
+.time-period-group:last-child {
+  margin-bottom: 0;
+}
+
+.time-period-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.time-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.time-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.76rem;
+  color: var(--gray);
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.time-disclaimer i {
+  color: var(--green);
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .date-field {
