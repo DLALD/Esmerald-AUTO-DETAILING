@@ -4,8 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emerald Auto Detailing</title>
-  <link rel="icon" type="image/png" href="Logos/logo.png" />
+  <link rel="icon" href="Logos/logo.png" type="image/png" sizes="any" />
+  <link rel="shortcut icon" href="Logos/logo.png" />
+  <link rel="apple-touch-icon" href="Logos/logo.png" />
+  <meta name="theme-color" content="#0a8c63" />
   <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -28,7 +34,6 @@
         </div>
       </nav>
       <div class="nav-icons">
-        <a href="https://www.instagram.com/emerald_autodetailing11/" class="btn-book" target="_blank">Book Now</a>
         <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
       </div>
     </div>
@@ -46,7 +51,6 @@
       </div>
       <div class="slide" data-bg="Imagenes de fondo/1.jpg" data-sub="PROFESSIONAL RESULTS, EVERY TIME" data-title="We Wash Your Car in <span>Under 15 Minutes</span>" data-btn="Book Now"></div>
       <div class="slide" data-bg="Imagenes de fondo/2.jpg" data-sub="PREMIUM CARE FOR YOUR VEHICLE" data-title="Showroom Shine <span>Guaranteed</span>" data-btn="See Our Services"></div>
-      <div class="slide" data-bg="Imagenes de fondo/3.jpg" data-sub="FIRST-TIME CUSTOMERS" data-title="Get <span>15% OFF</span> Your First Detail" data-btn="Claim Offer"></div>
       <div class="slide" data-bg="Our services/Exterior Wash/Imagenes/1.jpg" data-sub="EXTERIOR WASH" data-title="A Spotless Exterior <span>From Top to Bottom</span>" data-btn="Book Exterior Wash"></div>
       <div class="slide" data-bg="Our services/Exterior Wash/Imagenes/2.jpg" data-sub="HAND WASH &amp; DRY" data-title="No Brushes. <span>Just Hands &amp; Care.</span>" data-btn="Learn More"></div>
       <div class="slide" data-bg="Our services/Exterior Wash/Imagenes/3.jpg" data-sub="TIRE &amp; RIM SHINE" data-title="Every Detail <span>Makes the Difference</span>" data-btn="Book Now"></div>
@@ -61,7 +65,7 @@
     <div class="hero-content">
       <span class="hero-sub" id="heroSub"></span>
       <h1 id="heroTitle"></h1>
-      <a href="#services" class="btn-primary" id="heroBtn"></a>
+      <a href="#services" class="btn-primary glow-on-hover" id="heroBtn"></a>
     </div>
     <div class="hero-dots" id="heroDots"></div>
     <button class="hero-arrow left" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
@@ -98,7 +102,7 @@
           <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster</span></div>
         </div>
         <div class="package-img" style="background-image: url('Services/Basic/1.jpg')"></div>
-        <button class="pkg-btn">Book Now</button>
+        <button class="pkg-btn glow-on-hover">Book Now</button>
       </div>
 
       <!-- ENHANCED -->
@@ -124,7 +128,7 @@
           <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster, Rim &amp; Tire treatment</span></div>
         </div>
         <div class="package-img" style="background-image: url('Services/Enhanced/1.jpg')"></div>
-        <button class="pkg-btn">Book Now</button>
+        <button class="pkg-btn glow-on-hover">Book Now</button>
       </div>
 
       <!-- EMERALD EXPERIENCE -->
@@ -150,7 +154,7 @@
           <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster, deep wash, Rim &amp; Tire treatment, complete dry off</span></div>
         </div>
         <div class="package-img" style="background-image: url('Services/Esmerald Experience/1.jpg')"></div>
-        <button class="pkg-btn">Book Now</button>
+        <button class="pkg-btn glow-on-hover">Book Now</button>
       </div>
 
     </div>
@@ -220,9 +224,15 @@
 
   </section>
 
+  <!-- FACEBOOK FLOAT -->
+  <a href="https://www.facebook.com/share/18xFt5k7B8/?mibextid=wwXIfr" class="float-btn facebook-float" target="_blank" aria-label="Book on Facebook">
+    <i class="fab fa-facebook-f"></i><span>Book on Facebook</span>
+    <div class="scan-line"></div>
+  </a>
   <!-- INSTAGRAM FLOAT -->
-  <a href="https://www.instagram.com/emerald_autodetailing11/" class="whatsapp-float" target="_blank">
+  <a href="https://www.instagram.com/emerald_autodetailing12?igsh=ZHlkOWl3OHluODk2&utm_source=qr" class="float-btn instagram-float" target="_blank" aria-label="Book on Instagram">
     <i class="fab fa-instagram"></i><span>Book on Instagram</span>
+    <div class="scan-line"></div>
   </a>
 
   <!-- SERVICE MODAL -->
@@ -251,7 +261,7 @@
 
         <!-- Before/After toggle -->
         <div class="modal-ba-wrap" id="modalBAWrap">
-          <button class="modal-ba-tab" id="modalBABtn" data-view="gallery"><i class="fas fa-arrows-left-right"></i> Before &amp; After</button>
+          <button class="modal-ba-tab glow-on-hover" id="modalBABtn" data-view="gallery"><i class="fas fa-arrows-left-right"></i> Before &amp; After</button>
         </div>
 
         <div class="modal-price">
@@ -260,7 +270,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn-primary modal-btn" id="modalBookBtn">Book This Service</button>
+        <button class="btn-primary modal-btn glow-on-hover" id="modalBookBtn">Book This Service</button>
       </div>
       <!-- QUOTE FORM -->
       <div class="modal-form" id="modalForm">
@@ -274,16 +284,36 @@
             <input type="text" id="qCar" placeholder="Car Make &amp; Model (e.g. Toyota Camry)" required />
             <input type="text" id="qYear" placeholder="Year" required />
           </div>
-          <select id="qTime">
-            <option value="">Preferred Time</option>
-            <option>Morning (8am – 12pm)</option>
-            <option>Afternoon (12pm – 4pm)</option>
-            <option>Evening (4pm – 7pm)</option>
-          </select>
+         <div class="form-field date-field">
+            <label class="field-label">Select a Date</label>
+            <button type="button" class="date-trigger" id="dateTrigger">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span id="dateTriggerLabel">Choose a date</span>
+            </button>
+
+            <div class="quote-calendar" id="quoteCalendar">
+              <div class="qc-header">
+                <button type="button" class="qc-nav" id="qcPrev"><i class="fa-solid fa-chevron-left"></i></button>
+                <span class="qc-month" id="qcMonthLabel"></span>
+                <button type="button" class="qc-nav" id="qcNext"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+              <div class="qc-weekdays">
+                <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+              </div>
+              <div class="qc-days" id="qcDays"></div>
+            </div>
+            <input type="hidden" id="selectedDate" name="selectedDate" required>
+          </div>
+
+          <div class="form-field" id="timeSlotWrap" style="display:none;">
+            <label class="field-label">Preferred Time</label>
+            <div class="time-slots" id="timeSlots"></div>
+            <input type="hidden" id="selectedTime" name="selectedTime" required>
+          </div>
           <textarea id="qNotes" placeholder="Additional notes (optional)" rows="2"></textarea>
           <div class="form-actions">
-            <button type="button" id="formBack"><i class="fas fa-arrow-left"></i> Back</button>
-            <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
+            <button type="button" id="formBack" class="glow-on-hover"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="submit" class="btn-primary glow-on-hover"><i class="fas fa-paper-plane"></i> Send</button>
           </div>
         </form>
         <!-- Copy message step -->
@@ -291,9 +321,10 @@
           <p class="copy-instruction"><i class="fas fa-circle-check"></i> Your quote is ready! Choose how to send it:</p>
           <textarea class="copy-box" id="copyBox" readonly rows="7"></textarea>
           <div class="form-actions">
-            <button type="button" id="copyBtn"><i class="fas fa-copy"></i> Copy</button>
-            <a href="https://www.instagram.com/emerald_autodetailing11/" class="btn-primary" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a id="smsBtn" class="btn-primary" target="_blank"><i class="fas fa-comment-sms"></i> iMessage <span class="mobile-only-tag"><i class="fab fa-apple"></i><i class="fab fa-android"></i> Mobile Only</span></a>
+            <button type="button" id="copyBtn" class="glow-on-hover"><i class="fas fa-copy"></i> Copy</button>
+            <a href="https://www.facebook.com/share/18xFt5k7B8/?mibextid=wwXIfr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/emerald_autodetailing12?igsh=ZHlkOWl3OHluODk2&utm_source=qr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a id="smsBtn" class="btn-primary glow-on-hover" target="_blank"><i class="fas fa-comment-sms"></i> iMessage <span class="mobile-only-tag"><i class="fab fa-apple"></i><i class="fab fa-android"></i> Mobile Only</span></a>
           </div>
         </div>
       </div>

@@ -53,7 +53,8 @@ document.querySelectorAll('.package-card, .pkg-btn').forEach(el => {
       card.dataset.highlights,
       card.dataset.before,
       card.dataset.after,
-      card.dataset.captions
+      card.dataset.captions,
+      card.dataset.duration
     );
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -142,7 +143,8 @@ let mImages   = [];
 let mCaptions = [];
 let mTimer    = null;
 
-function buildModal(images, title, desc, price, highlights, before, after, captions) {
+function buildModal(images, title, desc, price, highlights, before, after, captions, duration) {
+  window.currentServiceDuration = parseInt(duration, 10) || 45;
   mImages   = images;
   mCaptions = (captions || '').split('|');
   mCurrent  = 0;
@@ -164,6 +166,9 @@ function buildModal(images, title, desc, price, highlights, before, after, capti
   modalTitle.textContent = title;
   modalDesc.textContent  = desc;
   document.getElementById('modalPrice').textContent = price || '65';
+
+  // Reset calendario y horario al abrir cualquier servicio
+  if (window.resetQuoteCalendar) window.resetQuoteCalendar();
 
   const hl = document.getElementById('modalHighlights');
   hl.innerHTML = '';
@@ -342,7 +347,8 @@ document.getElementById('quoteForm').addEventListener('submit', e => {
   const phone   = document.getElementById('qPhone').value;
   const car     = document.getElementById('qCar').value;
   const year    = document.getElementById('qYear').value;
-  const time    = document.getElementById('qTime').value || 'Flexible';
+  const date    = document.getElementById('selectedDate').value || '';
+  const time    = document.getElementById('selectedTime').value || 'Flexible';
   const notes   = document.getElementById('qNotes').value;
 
   const msg = `Hi Emerald Auto Detailing! I'd like to request a quote:
@@ -351,6 +357,7 @@ Service: ${service}
 Name: ${name}
 Phone: ${phone}
 Car: ${year} ${car}
+Preferred Date: ${date}
 Preferred Time: ${time}${notes ? '\nNotes: ' + notes : ''}`;
 
   document.getElementById('copyBox').value = msg;
@@ -422,3 +429,189 @@ document.querySelectorAll('.ba-tab').forEach(tab => {
     document.querySelector(`.ba-container[data-ba="${tab.dataset.ba}"]`).classList.add('active');
   });
 });
+// Quote calendar + time slots
+(function () {
+  const FESTIVOS = [
+    // Agregá acá los festivos en formato 'YYYY-MM-DD', ej: '2026-07-20',
+  ];
+
+  const calendarEl = document.getElementById('qcDays');
+  const monthLabel = document.getElementById('qcMonthLabel');
+  const prevBtn = document.getElementById('qcPrev');
+  const nextBtn = document.getElementById('qcNext');
+  const selectedDateInput = document.getElementById('selectedDate');
+  const timeSlotWrap = document.getElementById('timeSlotWrap');
+  const timeSlotsEl = document.getElementById('timeSlots');
+  const selectedTimeInput = document.getElementById('selectedTime');
+  const dateTrigger = document.getElementById('dateTrigger');
+  const dateTriggerLabel = document.getElementById('dateTriggerLabel');
+  const quoteCalendar = document.getElementById('quoteCalendar');
+
+  if (!calendarEl) return;
+
+  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  let viewDate = new Date();
+  viewDate.setDate(1);
+  let chosenDate = null;
+
+  const isFestivo = (dateStr) => FESTIVOS.includes(dateStr);
+  const isSunday = (date) => date.getDay() === 0;
+
+  function fmt(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+
+  function renderCalendar() {
+    calendarEl.innerHTML = '';
+    monthLabel.textContent = `${monthNames[viewDate.getMonth()]} ${viewDate.getFullYear()}`;
+
+    const firstDay = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
+    const startOffset = firstDay.getDay();
+    const daysInMonth = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0).getDate();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    for (let i = 0; i < startOffset; i++) {
+      const empty = document.createElement('div');
+      empty.className = 'qc-day empty';
+      calendarEl.appendChild(empty);
+    }
+
+    for (let d = 1; d <= daysInMonth; d++) {
+      const thisDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), d);
+      const dateStr = fmt(thisDate);
+      const btn = document.createElement('div');
+      btn.className = 'qc-day';
+      btn.textContent = d;
+
+      const past = thisDate < today;
+      const sunday = isSunday(thisDate);
+
+      if (past || sunday) {
+        btn.classList.add('disabled');
+      } else {
+        btn.addEventListener('click', () => selectDate(thisDate, btn));
+      }
+
+      if (dateStr === fmt(today)) btn.classList.add('today');
+      if (chosenDate && fmt(chosenDate) === dateStr) btn.classList.add('selected');
+
+      calendarEl.appendChild(btn);
+    }
+  }
+
+  function selectDate(date, btn) {
+    document.querySelectorAll('.qc-day.selected').forEach(el => el.classList.remove('selected'));
+    btn.classList.add('selected');
+    chosenDate = date;
+    selectedDateInput.value = fmt(date);
+
+    const niceLabel = date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    dateTriggerLabel.textContent = niceLabel;
+    dateTrigger.classList.add('has-date');
+
+    quoteCalendar.classList.remove('open');
+    dateTrigger.classList.remove('open');
+
+    renderTimeSlots(date);
+  }
+function toMinutes(h, m) { return h * 60 + m; }
+
+  function formatTime(totalMinutes) {
+    let h = Math.floor(totalMinutes / 60);
+    const m = totalMinutes % 60;
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12;
+    if (h === 0) h = 12;
+    return `${h}:${String(m).padStart(2, '0')} ${ampm}`;
+  }
+
+  function renderTimeSlots(date) {
+    const dateStr = fmt(date);
+    const day = date.getDay();
+    const festivo = isFestivo(dateStr);
+    const duration = window.currentServiceDuration || 45;
+
+    let periods;
+    if (day === 6 || festivo) {
+      periods = [
+        { label: 'Morning',   start: toMinutes(8, 0),  end: toMinutes(12, 0) },
+        { label: 'Afternoon', start: toMinutes(12, 0), end: toMinutes(17, 0) },
+        { label: 'Evening',   start: toMinutes(17, 0), end: toMinutes(21, 0) },
+      ];
+    } else {
+      periods = [
+        { label: 'Afternoon', start: toMinutes(14, 0), end: toMinutes(17, 0) },
+        { label: 'Evening',   start: toMinutes(17, 0), end: toMinutes(21, 0) },
+      ];
+    }
+
+    timeSlotsEl.innerHTML = '';
+    selectedTimeInput.value = '';
+
+    periods.forEach(period => {
+      const windowLen = period.end - period.start;
+      const fits = duration <= windowLen;
+      const rangeLabel = `${formatTime(period.start)} – ${formatTime(period.end)}`;
+
+      const chip = document.createElement('div');
+      chip.className = 'time-chip' + (fits ? '' : ' disabled');
+
+      if (fits) {
+        const finishExample = formatTime(period.start + duration);
+        chip.innerHTML = `<strong>${period.label}</strong>${rangeLabel}<small>Est. finish by ${finishExample}</small>`;
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('.time-chip.selected').forEach(c => c.classList.remove('selected'));
+          chip.classList.add('selected');
+          selectedTimeInput.value = `${period.label} (${rangeLabel})`;
+        });
+      } else {
+        chip.innerHTML = `<strong>${period.label}</strong>${rangeLabel}<small>Not enough time for this service</small>`;
+      }
+
+      timeSlotsEl.appendChild(chip);
+    });
+
+    timeSlotWrap.style.display = 'block';
+  }
+
+  prevBtn.addEventListener('click', () => { viewDate.setMonth(viewDate.getMonth() - 1); renderCalendar(); });
+  nextBtn.addEventListener('click', () => { viewDate.setMonth(viewDate.getMonth() + 1); renderCalendar(); });
+
+  // Abrir/cerrar el popup del calendario
+  dateTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = quoteCalendar.classList.toggle('open');
+    dateTrigger.classList.toggle('open', isOpen);
+  });
+
+  // Cerrar al hacer click afuera
+  document.addEventListener('click', (e) => {
+    if (!quoteCalendar.contains(e.target) && e.target !== dateTrigger && !dateTrigger.contains(e.target)) {
+      quoteCalendar.classList.remove('open');
+      dateTrigger.classList.remove('open');
+    }
+  });
+
+  // Exponer función de reset para usar desde buildModal()
+  window.resetQuoteCalendar = function () {
+    chosenDate = null;
+    viewDate = new Date();
+    viewDate.setDate(1);
+    selectedDateInput.value = '';
+    selectedTimeInput.value = '';
+    timeSlotsEl.innerHTML = '';
+    timeSlotWrap.style.display = 'none';
+    dateTriggerLabel.textContent = 'Choose a date';
+    dateTrigger.classList.remove('has-date');
+    quoteCalendar.classList.remove('open');
+    dateTrigger.classList.remove('open');
+    renderCalendar();
+  };
+
+  renderCalendar();
+})();
