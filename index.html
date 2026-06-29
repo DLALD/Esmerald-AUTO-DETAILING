@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emerald Auto Detailing</title>
-  <link rel="icon" href="Logos/logo.png" type="image/png" sizes="any" />
-  <link rel="shortcut icon" href="Logos/logo.png" />
-  <link rel="apple-touch-icon" href="Logos/logo.png" />
-  <meta name="theme-color" content="#0a8c63" />
+  <title>Davila's Auto Detailing</title>
+  <link rel="icon" href="Logos/fondo.jpeg" type="image/jpeg" />
+  <link rel="shortcut icon" href="Logos/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="Logos/fondo.jpeg" />
+  <meta name="theme-color" content="#4da6ff" />
   <link rel="stylesheet" href="index.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,50 +16,66 @@
 </head>
 <body>
 
+  <!-- STARS PARALLAX BACKGROUND -->
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+
   <!-- NAVBAR -->
-  <header class="navbar">
+  <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">
-        <img src="Logos/logo.png" alt="Emerald Auto Detailing" loading="lazy" decoding="async" />
-      </a>
+<a href="#home" class="logo">
+  <div class="logo-combined">
+    <img class="logo-icon" src="Logos/logo.png" alt="DA" />
+    <img class="logo-text-img" src="Imagenes de fondo/navbar.png" alt="Davila's Auto Detailing" />
+  </div>
+</a>
       <nav class="nav-links">
-        <a href="#home" class="nav-link">Home</a>
+        <a href="#home" class="nav-link" data-section="home">Home</a>
         <div class="nav-dropdown">
-          <a href="#services" class="nav-link">Services <i class="fas fa-chevron-down"></i></a>
+          <a href="#services" class="nav-link" data-section="services">Services <i class="fas fa-chevron-down nav-chevron"></i></a>
           <div class="dropdown-menu">
-            <a href="#services" data-service="basic"><i class="fas fa-car-side"></i> Basic — $65</a>
-            <a href="#services" data-service="enhanced"><i class="fas fa-shield-halved"></i> Enhanced — $80</a>
-            <a href="#services" data-service="emerald"><i class="fas fa-gem"></i> Emerald Experience — $100</a>
+            <a href="#services" data-service="basic"><i class="fas fa-car-side"></i> Basic &mdash; $65</a>
+            <a href="#services" data-service="enhanced"><i class="fas fa-shield-halved"></i> Enhanced &mdash; $80</a>
+            <a href="#services" data-service="davila"><i class="fas fa-gem"></i> Davila's Experience &mdash; $100</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="#trash-service" class="nav-link" data-section="trash-service">Additional Services <i class="fas fa-chevron-down nav-chevron"></i></a>
+          <div class="dropdown-menu">
+            <a href="#trash-service" data-service="trash"><i class="fas fa-trash-can"></i> Trash Can Cleaning &mdash; $20</a>
           </div>
         </div>
       </nav>
-      <div class="nav-icons">
+      <div class="nav-actions">
+        <a href="#services" class="btn-primary glow-on-hover nav-book"><i class="fas fa-calendar-days"></i> Book Now</a>
         <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
+      <a href="#trash-service">Additional Services</a>
+      <a href="#services" class="btn-primary glow-on-hover" style="margin-top:10px;justify-content:center"><i class="fas fa-calendar-days"></i> Book Now</a>
     </div>
   </header>
 
   <!-- HERO SLIDER -->
   <section class="hero" id="home">
     <div class="hero-slides">
-      <div class="slide logo-slide active" data-sub="WELCOME TO EMERALD AUTO DETAILING" data-title="The Difference Is in the <span>Details</span>" data-btn="Our Services">
-        <img src="Logos/logo.png" alt="Emerald Auto Detailing" loading="lazy" decoding="async" />
-      </div>
+      <div class="slide active" data-bg="logos/logo.png" data-sub="WELCOME TO DAVILA'S AUTO DETAILING" data-title="The Difference Is in the <span>Details</span>" data-btn="Our Services"></div>
       <div class="slide" data-bg="Imagenes de fondo/1.jpg" data-sub="PROFESSIONAL RESULTS, EVERY TIME" data-title="We Wash Your Car in <span>Under 15 Minutes</span>" data-btn="Book Now"></div>
       <div class="slide" data-bg="Imagenes de fondo/2.jpg" data-sub="PREMIUM CARE FOR YOUR VEHICLE" data-title="Showroom Shine <span>Guaranteed</span>" data-btn="See Our Services"></div>
       <div class="slide" data-bg="Our services/Exterior Wash/Imagenes/1.jpg" data-sub="EXTERIOR WASH" data-title="A Spotless Exterior <span>From Top to Bottom</span>" data-btn="Book Exterior Wash"></div>
-      <div class="slide" data-bg="Our services/Exterior Wash/Imagenes/2.jpg" data-sub="HAND WASH &amp; DRY" data-title="No Brushes. <span>Just Hands &amp; Care.</span>" data-btn="Learn More"></div>
-      <div class="slide" data-bg="Our services/Exterior Wash/Imagenes/3.jpg" data-sub="TIRE &amp; RIM SHINE" data-title="Every Detail <span>Makes the Difference</span>" data-btn="Book Now"></div>
-      <div class="slide" data-bg="Our services/Interior Detailing/imagenes/1.jpeg" data-sub="INTERIOR DETAILING" data-title="Your Cabin, <span>Fresh &amp; Immaculate</span>" data-btn="Book Interior Detail"></div>
-      <div class="slide" data-bg="Our services/Interior Detailing/imagenes/2.jpg" data-sub="DEEP CLEAN &amp; STEAM" data-title="We Remove Every <span>Stain &amp; Odor</span>" data-btn="Learn More"></div>
-      <div class="slide" data-bg="Our services/Interior Detailing/imagenes/3.jpg" data-sub="LEATHER &amp; DASHBOARD CARE" data-title="Condition, Polish <span>&amp; Protect</span>" data-btn="Book Now"></div>
+      <div class="slide" data-bg="Our services/Exterior Wash/Imagenes/2.jpg" data-sub="HAND WASH & DRY" data-title="No Brushes. <span>Just Hands & Care.</span>" data-btn="Learn More"></div>
+      <div class="slide" data-bg="Our services/Exterior Wash/Imagenes/3.jpg" data-sub="TIRE & RIM SHINE" data-title="Every Detail <span>Makes the Difference</span>" data-btn="Book Now"></div>
+      <div class="slide" data-bg="Our services/Interior Detailing/imagenes/1.jpeg" data-sub="INTERIOR DETAILING" data-title="Your Cabin, <span>Fresh & Immaculate</span>" data-btn="Book Interior Detail"></div>
+      <div class="slide" data-bg="Our services/Interior Detailing/imagenes/2.jpg" data-sub="DEEP CLEAN & STEAM" data-title="We Remove Every <span>Stain & Odor</span>" data-btn="Learn More"></div>
+      <div class="slide" data-bg="Our services/Interior Detailing/imagenes/3.jpg" data-sub="LEATHER & DASHBOARD CARE" data-title="Condition, Polish <span>& Protect</span>" data-btn="Book Now"></div>
       <div class="slide" data-bg="Our services/Wheel Care/imagenes/1.jpg" data-sub="WHEEL CARE" data-title="Clean Wheels, <span>Proud Driver</span>" data-btn="Book Wheel Care"></div>
       <div class="slide" data-bg="Our services/Wheel Care/imagenes/2.jpg" data-sub="BRAKE DUST REMOVAL" data-title="Deep Clean for <span>Every Rim</span>" data-btn="Learn More"></div>
-      <div class="slide" data-bg="Our services/Wheel Care/imagenes/3.jpg" data-sub="TIRE DRESSING &amp; COATING" data-title="Protected Wheels <span>That Last</span>" data-btn="Book Now"></div>
+      <div class="slide" data-bg="Our services/Wheel Care/imagenes/3.jpg" data-sub="TIRE DRESSING & COATING" data-title="Protected Wheels <span>That Last</span>" data-btn="Book Now"></div>
+      <div class="slide" data-bg="Our services/trash clean/1.jpeg" data-sub="TRASH CAN CLEANING" data-title="Sanitized, Deodorized <span>& Disinfected</span>" data-btn="Book Trash Cleaning"></div>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -71,6 +87,7 @@
     <button class="hero-arrow left" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
     <button class="hero-arrow right" id="heroNext"><i class="fas fa-chevron-right"></i></button>
   </section>
+
   <!-- SERVICES / PRICING -->
   <section class="services" id="services">
     <div class="services-header">
@@ -86,11 +103,12 @@
         data-before="Our services/Exterior Wash/Imagenes/4.jpg"
         data-after="Our services/Exterior Wash/Imagenes/5.jpg"
         data-title="Basic Detail"
-        data-desc="Perfect for a quick refresh. Interior vacuum and basic wipe down plus exterior foam blast."
+        data-desc="Perfect for a quick refresh. Interior vacuum and basic wipe down plus exterior foam blast. Add Trash Can Cleaning for only +$20."
         data-captions="Foam Blast from Top to Bottom|Spotless Exterior in 45 Minutes|Tire Shine Included|Quick & Efficient Wash"
-        data-highlights="Interior: Vacuum, Dog/Cat hair removal|Basic interior wipe down (spray &amp; wipe)|Exterior: Spray down, foam blaster|Duration: 45 minutes">
+        data-highlights="Interior: Vacuum, Dog/Cat hair removal|Basic interior wipe down (spray & wipe)|Exterior: Spray down, foam blaster|Duration: 45 minutes">
+        <div class="card-border"></div>
         <div class="package-left">
-          <div class="package-icon"><img src="Logos/exterior.png" alt="Basic" loading="lazy" decoding="async" /></div>
+          <div class="package-icon"><img src="Logos/basic.jpg" alt="Basic" loading="lazy" decoding="async" /></div>
           <div class="package-title-wrap">
             <h3 class="package-name">BASIC</h3>
             <div class="package-price"><span class="dollar">$</span>65</div>
@@ -98,8 +116,9 @@
           </div>
         </div>
         <div class="package-features">
-          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Interior: Vacuum, Dog/Cat hair removal, basic interior wipe down (spray &amp; wipe)</span></div>
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Interior: Vacuum, Dog/Cat hair removal, basic interior wipe down (spray & wipe)</span></div>
           <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster</span></div>
+          <div class="pkg-feature addon-feature"><i class="fas fa-trash-can"></i><span>Add-on: Trash Can Cleaning <strong>+$20</strong></span></div>
         </div>
         <div class="package-img" style="background-image: url('Services/Basic/1.jpg')"></div>
         <button class="pkg-btn glow-on-hover">Book Now</button>
@@ -107,16 +126,17 @@
 
       <!-- ENHANCED -->
       <div class="package-card featured" data-service="enhanced" data-price="80" data-duration="105"
-        data-images="Services/Enhanced/1.jpg|Services/Enhanced/2.jpg|Services/Enhanced/3.jpg|Services/Enhanced/4.webp"
+        data-images="Services/Enhanced/1.jpg|Services/Enhanced/2.jpg|Services/Enhanced/3.jpg|Services/Enhanced/4.webp|Our services/trash clean/1.jpeg|Our services/trash clean/2.jpeg"
         data-before="Our services/Interior Detailing/imagenes/4.jpeg"
         data-after="Our services/Interior Detailing/imagenes/5.jpeg"
         data-title="Enhanced Detail"
-        data-desc="A thorough clean inside and out with carpet care, odor elimination and rim treatment."
-        data-captions="Deep Interior Vacuum & Hair Removal|Carpet Cleaner & Odor Elimination|Foam Blast + Rim & Tire Treatment|Advanced Interior Wipe Down"
-        data-highlights="Interior: Vacuum, hair removal, carpet cleaner|Advanced interior wipe down, odor elimination|Exterior: Spray down, foam blaster|Rim &amp; Tire treatment — 1h 45min">
+        data-desc="A thorough clean inside and out with carpet care, odor elimination and rim treatment. Add Trash Can Cleaning for only +$20."
+        data-captions="Deep Interior Vacuum & Hair Removal|Carpet Cleaner & Odor Elimination|Foam Blast + Rim & Tire Treatment|Advanced Interior Wipe Down|Trash Can Cleaning &mdash; Sanitized & Deodorized|Trash Can Disinfected Inside & Out"
+        data-highlights="Interior: Vacuum, hair removal, carpet cleaner|Advanced interior wipe down, odor elimination|Exterior: Spray down, foam blaster|Rim & Tire treatment &mdash; 1h 45min">
+        <div class="card-border"></div>
         <div class="pkg-badge">MOST POPULAR</div>
         <div class="package-left">
-          <div class="package-icon purple"><img src="Logos/enhanced.png" alt="Enhanced" loading="lazy" decoding="async" /></div>
+          <div class="package-icon purple"><img src="Logos/Enhanced.jpg" alt="Enhanced" loading="lazy" decoding="async" /></div>
           <div class="package-title-wrap">
             <h3 class="package-name purple">ENHANCED</h3>
             <div class="package-price"><span class="dollar">$</span>80</div>
@@ -125,33 +145,36 @@
         </div>
         <div class="package-features">
           <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Interior: Vacuum, hair removal, carpet cleaner, advanced interior wipe down, odor elimination</span></div>
-          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster, Rim &amp; Tire treatment</span></div>
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster, Rim & Tire treatment</span></div>
+          <div class="pkg-feature addon-feature"><i class="fas fa-trash-can"></i><span>Add-on: Trash Can Cleaning <strong>+$20</strong></span></div>
         </div>
         <div class="package-img" style="background-image: url('Services/Enhanced/1.jpg')"></div>
         <button class="pkg-btn glow-on-hover">Book Now</button>
       </div>
 
-     <!-- EMERALD EXPERIENCE -->
-      <div class="package-card premium" data-service="emerald" data-price="100" data-duration="120"
+     <!-- DAVILA'S EXPERIENCE -->
+      <div class="package-card premium" data-service="davila" data-price="100" data-duration="120"
         data-images="Services/Esmerald Experience/1.jpg|Services/Esmerald Experience/2.jpg|Services/Esmerald Experience/3.webp|Services/Esmerald Experience/4.jpg|Services/Esmerald Experience/5.jpg"
         data-before="Our services/Wheel Care/imagenes/5.jpg"
         data-after="Our services/Wheel Care/imagenes/4.jpg"
-        data-title="Emerald Experience"
-        data-desc="The ultimate detail. Full steam clean, leather conditioning, deep wash and complete dry off."
-        data-captions="Leather Seat Condition & Wax|Steam Cleaning — Every Corner|Deep Wash & Complete Dry Off|Carpet & Seat Extraction|Showroom Finish Guaranteed"
-        data-highlights="Interior: Vacuum, hair removal, carpet &amp; seat extraction|Deep clean wipe down, seat condition &amp; wax (LEATHER ONLY)|Odor elimination, steam cleaning|Exterior: Deep wash, Rim &amp; Tire treatment, complete dry off — 2 hours">
+        data-title="Davila's Experience"
+        data-desc="The ultimate detail. Full steam clean, leather conditioning, deep wash and complete dry off. Add Trash Can Cleaning for only +$20."
+        data-captions="Leather Seat Condition & Wax|Steam Cleaning &mdash; Every Corner|Deep Wash & Complete Dry Off|Carpet & Seat Extraction|Showroom Finish Guaranteed"
+        data-highlights="Interior: Vacuum, hair removal, carpet & seat extraction|Deep clean wipe down, seat condition & wax (LEATHER ONLY)|Odor elimination, steam cleaning|Exterior: Deep wash, Rim & Tire treatment, complete dry off &mdash; 2 hours">
+        <div class="card-border"></div>
         <div class="pkg-badge emerald-badge">PREMIUM</div>
         <div class="package-left">
-          <div class="package-icon green"><img src="Logos/experience.png" alt="Emerald Experience" loading="lazy" decoding="async" /></div>
+          <div class="package-icon green"><img src="Logos/Davila&acute;s.jpg" alt="Davila's Experience" loading="lazy" decoding="async" /></div>
           <div class="package-title-wrap">
-            <h3 class="package-name green">EMERALD<br>EXPERIENCE</h3>
+            <h3 class="package-name green">DAVILA'S<br>EXPERIENCE</h3>
             <div class="package-price green"><span class="dollar">$</span>100</div>
             <span class="package-duration">2 HOURS</span>
           </div>
         </div>
         <div class="package-features">
-          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Interior: Vacuum, hair removal, carpet &amp; seat extraction, deep clean wipe down, seat condition &amp; wax (LEATHER SEATS ONLY), odor elimination, steam cleaning</span></div>
-          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster, deep wash, Rim &amp; Tire treatment, complete dry off</span></div>
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Interior: Vacuum, hair removal, carpet & seat extraction, deep clean wipe down, seat condition & wax (LEATHER SEATS ONLY), odor elimination, steam cleaning</span></div>
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Exterior: Spray down, foam blaster, deep wash, Rim & Tire treatment, complete dry off</span></div>
+          <div class="pkg-feature addon-feature"><i class="fas fa-trash-can"></i><span>Add-on: Trash Can Cleaning <strong>+$20</strong></span></div>
         </div>
         <div class="package-img" style="background-image: url('Services/Esmerald Experience/1.jpg')"></div>
         <button class="pkg-btn glow-on-hover">Book Now</button>
@@ -161,7 +184,7 @@
 
     <!-- BEFORE / AFTER -->
     <div class="beforeafter-wrap">
-      <p class="services-tagline" style="text-align:center;margin-bottom:16px">DRAG TO REVEAL &middot; <span>BEFORE &amp; AFTER</span></p>
+      <p class="services-tagline" style="text-align:center;margin-bottom:16px">DRAG TO REVEAL &middot; <span>BEFORE & AFTER</span></p>
 
       <div class="ba-tabs">
         <button class="ba-tab active" data-ba="interior">Interior Detailing</button>
@@ -169,7 +192,6 @@
         <button class="ba-tab" data-ba="wheel">Wheel Care</button>
       </div>
 
-      <!-- Interior -->
       <div class="ba-container active" id="baContainer" data-ba="interior">
         <div class="ba-after" style="background-image:url('Our services/Interior Detailing/imagenes/5.jpeg')"></div>
         <div class="ba-before" style="background-image:url('Our services/Interior Detailing/imagenes/4.jpeg')" id="baBefore"></div>
@@ -178,7 +200,6 @@
         <span class="ba-label right">AFTER</span>
       </div>
 
-      <!-- Exterior -->
       <div class="ba-container" id="baContainerExt" data-ba="exterior">
         <div class="ba-after" style="background-image:url('Our services/Exterior Wash/Imagenes/5.jpg')"></div>
         <div class="ba-before" style="background-image:url('Our services/Exterior Wash/Imagenes/4.jpg')" id="baBeforeExt"></div>
@@ -187,7 +208,6 @@
         <span class="ba-label right">AFTER</span>
       </div>
 
-      <!-- Wheel -->
       <div class="ba-container" id="baContainerWheel" data-ba="wheel">
         <div class="ba-after" style="background-image:url('Our services/Wheel Care/imagenes/4.jpg')"></div>
         <div class="ba-before" style="background-image:url('Our services/Wheel Care/imagenes/5.jpg')" id="baBeforeWheel"></div>
@@ -195,7 +215,6 @@
         <span class="ba-label left">BEFORE</span>
         <span class="ba-label right">AFTER</span>
       </div>
-
     </div>
 
     <!-- BOTTOM STRIP -->
@@ -218,10 +237,96 @@
           <div class="strip-img" style="background-image: url('Our services/Wheel Care/imagenes/2.jpg')"></div>
           <div class="strip-label purple"><i class="fas fa-shield-halved"></i> EXPERT FINISH</div>
         </div>
+        <div class="strip-item">
+          <div class="strip-img" style="background-image: url('Our services/trash clean/1.jpeg')"></div>
+          <div class="strip-label green"><i class="fas fa-trash-can"></i> TRASH CAN CLEANING</div>
+        </div>
       </div>
-      <p class="strip-footer">REFINE &nbsp;•&nbsp; PROTECT &nbsp;•&nbsp; ELEVATE</p>
+      <p class="strip-footer">REFINE &nbsp;&bull;&nbsp; PROTECT &nbsp;&bull;&nbsp; ELEVATE</p>
     </div>
+  </section>
 
+  <!-- ===== TRASH CAN CLEANING ===== -->
+  <section class="trash-standalone" id="trash-service">
+    <div class="trash-standalone-inner">
+
+      <!-- Header -->
+      <div class="trash-standalone-header">
+        <span class="trash-standalone-badge"><i class="fas fa-trash-can"></i> ADD-ON SERVICE</span>
+        <h2>Trash Can <span>Cleaning</span></h2>
+        <p class="trash-standalone-sub">We come to you. Sanitized, deodorized & disinfected &mdash; inside and out.</p>
+      </div>
+
+      <!-- Card standalone -->
+      <div class="trash-main-card" data-service="trash" data-price="20" data-duration="30"
+        data-images="Our%20services/trash%20clean/1.jpeg|Our%20services/trash%20clean/2.jpeg"
+        data-before="Our%20services/trash%20clean/1.jpeg" data-after="Our%20services/trash%20clean/2.jpeg"
+        data-title="Trash Can Cleaning"
+        data-desc="Stand-alone residential trash can cleaning service. We sanitize, deodorize and disinfect your bins inside and out &mdash; no mess, no hassle."
+        data-captions="Sanitized Inside & Out|Deodorized & Disinfected"
+        data-highlights="High-pressure rinse & scrub|Hospital-grade disinfectant|Odor eliminator spray|Interior & exterior clean|~30 minutes per bin">
+
+        <div class="trash-card-left">
+          <div class="trash-card-icon">
+            <i class="fas fa-trash-can"></i>
+          </div>
+          <div class="trash-card-info">
+            <h3>TRASH CAN<br>CLEANING</h3>
+            <div class="trash-card-price"><span class="dollar">$</span>20</div>
+            <span class="trash-card-duration">~30 MIN / BIN</span>
+          </div>
+        </div>
+
+        <div class="trash-card-features">
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>High-pressure rinse & scrub inside and out</span></div>
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Hospital-grade disinfectant & odor eliminator</span></div>
+          <div class="pkg-feature"><i class="fas fa-circle-check"></i><span>Can be added to any detailing package</span></div>
+          <div class="pkg-feature combo-feature"><i class="fas fa-plus-circle"></i><span>Book with any auto detail and <strong>save time</strong></span></div>
+        </div>
+
+        <div class="trash-card-img" style="background-image: url('Our%20services/trash%20clean/1.jpeg')"></div>
+
+        <button class="pkg-btn trash-pkg-btn glow-on-hover">Book Now</button>
+      </div>
+
+      <!-- How it works -->
+      <div class="trash-steps">
+        <p class="services-tagline" style="text-align:center;margin-bottom:24px">HOW IT <span>WORKS</span></p>
+        <div class="trash-steps-grid">
+          <div class="trash-step">
+            <div class="trash-step-num">01</div>
+            <i class="fas fa-calendar-check"></i>
+            <strong>Book Online</strong>
+            <span>Schedule via Facebook, Instagram or SMS</span>
+          </div>
+          <div class="trash-step">
+            <div class="trash-step-num">02</div>
+            <i class="fas fa-truck"></i>
+            <strong>We Come to You</strong>
+            <span>Mobile service &mdash; no transport needed</span>
+          </div>
+          <div class="trash-step">
+            <div class="trash-step-num">03</div>
+            <i class="fas fa-spray-can-sparkles"></i>
+            <strong>Deep Clean</strong>
+            <span>High-pressure wash + disinfectant</span>
+          </div>
+          <div class="trash-step">
+            <div class="trash-step-num">04</div>
+            <i class="fas fa-star"></i>
+            <strong>Fresh & Ready</strong>
+            <span>Returned sanitized, deodorized & dry</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Combo CTA -->
+      <div class="trash-combo-cta">
+        <p><i class="fas fa-bolt"></i> <strong>Bundle & Save:</strong> Add trash can cleaning to any auto detail service for just <span class="combo-price">+$20</span></p>
+        <a href="#services" class="btn-primary glow-on-hover">View Auto Detail Packages</a>
+      </div>
+
+    </div>
   </section>
 
   <!-- FACEBOOK FLOAT -->
@@ -235,6 +340,88 @@
     <div class="scan-line"></div>
   </a>
 
+  <!-- TRASH MODAL (now matches service modal structure) -->
+  <div class="modal-backdrop" id="trashModal">
+    <div class="modal-box" id="trashModalBox">
+      <button class="modal-close" id="trashModalClose"><i class="fas fa-times"></i></button>
+
+      <!-- Slider -->
+      <div class="modal-slider">
+        <div class="modal-slides" id="trashModalSlides"></div>
+        <button class="modal-arrow left" id="trashModalPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="modal-arrow right" id="trashModalNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="modal-dots" id="trashModalDots"></div>
+        <div class="modal-caption" id="trashModalCaption"></div>
+      </div>
+
+      <!-- Info -->
+      <div class="modal-info">
+        <h3 id="trashModalTitle">Trash Can Cleaning</h3>
+        <p id="trashModalDesc">Stand-alone residential trash can cleaning service. We sanitize, deodorize and disinfect your bins inside and out &mdash; no mess, no hassle.</p>
+        <ul class="modal-highlights" id="trashModalHighlights">
+          <li>High-pressure rinse & scrub</li>
+          <li>Hospital-grade disinfectant</li>
+          <li>Odor eliminator spray</li>
+          <li>Interior & exterior clean</li>
+          <li>~30 minutes per bin</li>
+        </ul>
+        <div class="modal-price">
+          <span class="modal-price-label">PRICE</span>
+          <span class="modal-price-amount"><span class="dollar">$</span>20 <em>USD / bin</em></span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-primary modal-btn glow-on-hover" id="trashModalBookBtn">Book This Service</button>
+      </div>
+
+      <!-- QUOTE FORM -->
+      <div class="modal-form" id="trashModalForm">
+        <h4>Request a Quote</h4>
+        <form id="trashQuoteForm">
+          <label class="field-label">Full Name</label>
+          <input type="text" id="tqName" placeholder="Your name" required />
+          <label class="field-label">Phone Number</label>
+          <input type="tel" id="tqPhone" placeholder="(555) 000-0000" required />
+          <label class="field-label">Service Address</label>
+          <input type="text" id="tqAddress" placeholder="Street address" required />
+          <div class="form-field date-field" style="margin-bottom:10px">
+            <label class="field-label">Preferred Date</label>
+            <button type="button" class="date-trigger" id="tqDateTrigger">
+              <i class="fa-solid fa-calendar-days"></i>
+              <span id="tqDateLabel">Choose a date</span>
+            </button>
+            <div class="quote-calendar" id="tqCalendar">
+              <div class="qc-header">
+                <button type="button" class="qc-nav" id="tqPrev"><i class="fa-solid fa-chevron-left"></i></button>
+                <span class="qc-month" id="tqMonthLabel"></span>
+                <button type="button" class="qc-nav" id="tqNext"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+              <div class="qc-weekdays"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+              <div class="qc-days" id="tqDays"></div>
+            </div>
+            <input type="hidden" id="tqSelectedDate" />
+          </div>
+          <textarea id="tqNotes" placeholder="Additional notes (optional)" rows="2"></textarea>
+          <div class="form-actions">
+            <button type="button" id="trashFormBack" class="glow-on-hover"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="submit" class="btn-primary glow-on-hover"><i class="fas fa-paper-plane"></i> Send Request</button>
+          </div>
+        </form>
+        <div class="form-copy" id="tqFormCopy">
+          <p class="copy-instruction"><i class="fas fa-circle-check"></i> Ready! Choose how to send it:</p>
+          <textarea class="copy-box" id="tqCopyBox" readonly rows="6"></textarea>
+          <div class="form-actions">
+            <button type="button" id="tqCopyBtn" class="glow-on-hover"><i class="fas fa-copy"></i> Copy</button>
+            <a href="https://www.facebook.com/share/18xFt5k7B8/?mibextid=wwXIfr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/emerald_autodetailing12?igsh=ZHlkOWl3OHluODk2&utm_source=qr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a id="tqSmsBtn" class="btn-primary glow-on-hover" target="_blank"><i class="fas fa-comment-sms"></i> SMS <span class="mobile-only-tag">Mobile Only</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- SERVICE MODAL -->
   <div class="modal-backdrop" id="serviceModal">
     <div class="modal-box">
@@ -245,7 +432,6 @@
         <button class="modal-arrow right" id="modalNext"><i class="fas fa-chevron-right"></i></button>
         <div class="modal-dots" id="modalDots"></div>
         <div class="modal-caption" id="modalCaption"></div>
-        <!-- BA inside modal -->
         <div class="modal-ba-slider" id="modalBASlider" style="display:none">
           <div class="ba-after" id="modalBAAfter"></div>
           <div class="ba-before" id="modalBABefore"></div>
@@ -258,12 +444,9 @@
         <h3 id="modalTitle"></h3>
         <p id="modalDesc"></p>
         <ul class="modal-highlights" id="modalHighlights"></ul>
-
-        <!-- Before/After toggle -->
         <div class="modal-ba-wrap" id="modalBAWrap">
-          <button class="modal-ba-tab glow-on-hover" id="modalBABtn" data-view="gallery"><i class="fas fa-arrows-left-right"></i> Before &amp; After</button>
+          <button class="modal-ba-tab glow-on-hover" id="modalBABtn" data-view="gallery"><i class="fas fa-arrows-left-right"></i> Before & After</button>
         </div>
-
         <div class="modal-price">
           <span class="modal-price-label">STARTING AT</span>
           <span class="modal-price-amount"><span class="dollar">$</span><span id="modalPrice">65</span> <em>USD</em></span>
@@ -281,7 +464,7 @@
             <input type="tel" id="qPhone" placeholder="Your Phone" required />
           </div>
           <div class="form-row">
-            <input type="text" id="qCar" placeholder="Car Make &amp; Model (e.g. Toyota Camry)" required />
+            <input type="text" id="qCar" placeholder="Car Make & Model (e.g. Toyota Camry)" required />
             <input type="text" id="qYear" placeholder="Year" required />
           </div>
          <div class="form-field date-field">
@@ -290,7 +473,6 @@
               <i class="fa-solid fa-calendar-days"></i>
               <span id="dateTriggerLabel">Choose a date</span>
             </button>
-
             <div class="quote-calendar" id="quoteCalendar">
               <div class="qc-header">
                 <button type="button" class="qc-nav" id="qcPrev"><i class="fa-solid fa-chevron-left"></i></button>
@@ -311,13 +493,28 @@
             <p class="time-disclaimer"><i class="fas fa-circle-info"></i> Exact start time is subject to confirmation based on technician availability.</p>
            <input type="hidden" id="selectedTime" name="selectedTime">
           </div>
+
+          <!-- ADD-ON: Trash Can Cleaning -->
+          <div class="addon-wrap" id="trashAddonWrap">
+            <label class="addon-label">
+              <input type="checkbox" id="qTrashAddon" />
+              <span class="addon-box">
+                <i class="fas fa-trash-can"></i>
+                <span class="addon-text">
+                  <strong>Add Trash Can Cleaning</strong>
+                  <em>Sanitized &middot; Deodorized &middot; Disinfected &mdash; <span class="addon-price">+$20</span></em>
+                </span>
+                <span class="addon-check"><i class="fas fa-check"></i></span>
+              </span>
+            </label>
+          </div>
+
           <textarea id="qNotes" placeholder="Additional notes (optional)" rows="2"></textarea>
           <div class="form-actions">
             <button type="button" id="formBack" class="glow-on-hover"><i class="fas fa-arrow-left"></i> Back</button>
             <button type="submit" class="btn-primary glow-on-hover"><i class="fas fa-paper-plane"></i> Send</button>
           </div>
         </form>
-        <!-- Copy message step -->
         <div class="form-copy" id="formCopy">
           <p class="copy-instruction"><i class="fas fa-circle-check"></i> Your quote is ready! Choose how to send it:</p>
           <textarea class="copy-box" id="copyBox" readonly rows="7"></textarea>
@@ -331,6 +528,28 @@
       </div>
     </div>
   </div>
+
+  <!-- STAR GENERATOR -->
+  <script>
+  (function(){
+    function stars(n){
+      var s='';
+      for(var i=0;i<n;i++){
+        if(i)s+=', ';
+        s+=Math.random()*2000+'px '+Math.random()*2000+'px #FFF';
+      }
+      return s;
+    }
+    var st=document.createElement('style');
+    st.textContent='#stars{box-shadow:'+stars(700)+'}'+
+      '#stars2{box-shadow:'+stars(200)+'}'+
+      '#stars3{box-shadow:'+stars(100)+'}'+
+      '#stars:after{box-shadow:'+stars(700)+'}'+
+      '#stars2:after{box-shadow:'+stars(200)+'}'+
+      '#stars3:after{box-shadow:'+stars(100)+'}';
+    document.head.appendChild(st);
+  })();
+  </script>
 
   <script src="index.js"></script>
 </body>
