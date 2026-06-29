@@ -277,7 +277,7 @@ a { text-decoration: none; color: inherit; }
 /* ===== HERO SLIDER ===== */
 .hero {
   position: relative;
-  height: 680px;
+  height: 820px;
   overflow: hidden;
   z-index: 1;
 }
@@ -293,7 +293,7 @@ a { text-decoration: none; color: inherit; }
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transform: scale(0.95);
+  transform: scale(0.98);
   transition: opacity 0.5s ease, transform 6s ease;
 }
 
@@ -2730,4 +2730,388 @@ a { text-decoration: none; color: inherit; }
   #trashModal .modal-footer { padding: 4px 16px 16px !important; }
   #trashModal .modal-form { padding: 14px 16px 16px !important; }
   #trashModal .modal-close { top: 10px !important; right: 10px !important; z-index: 50 !important; }
+}
+
+/* ===== FIX: TRASH MODAL & CARD RESPONSIVE ===== */
+
+/* Ajustes para evitar desbordamiento horizontal en el modal de trash */
+#trashModal .modal-box {
+  overflow-x: hidden !important;
+}
+
+/* Estilos específicos para el modal de trash en móviles */
+@media (max-width: 768px) {
+  /* Modal box: ocupa toda la pantalla sin bordes */
+  #trashModal .modal-box {
+    padding: 0 0 20px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    min-height: 100dvh !important;
+    background: #020509 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Todos los elementos dentro del modal respetan el ancho */
+  #trashModal .modal-box * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Slider más compacto */
+  #trashModal .modal-slider {
+    height: 200px !important;
+    margin: 0 !important;
+  }
+
+  /* Info */
+  #trashModal .modal-info {
+    padding: 12px 14px 10px !important;
+  }
+
+  #trashModal .modal-info h3 {
+    font-size: 1rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  #trashModal .modal-info p {
+    font-size: 0.82rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  #trashModal .modal-highlights {
+    grid-template-columns: 1fr !important;
+    gap: 4px !important;
+    margin-bottom: 10px !important;
+  }
+
+  #trashModal .modal-highlights li {
+    font-size: 0.8rem !important;
+    padding: 2px 0 !important;
+  }
+
+  #trashModal .modal-price {
+    padding: 8px 12px !important;
+    margin-bottom: 6px !important;
+    flex-wrap: wrap !important;
+  }
+
+  #trashModal .modal-price-amount {
+    font-size: 1.2rem !important;
+  }
+
+  /* Footer y botón */
+  #trashModal .modal-footer {
+    padding: 0 14px 14px !important;
+  }
+
+  #trashModal .modal-footer .modal-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 0.85rem !important;
+    padding: 10px 0 !important;
+  }
+
+  /* Formulario */
+  #trashModal .modal-form {
+    padding: 12px 14px 16px !important;
+  }
+
+  #trashModal .modal-form h4 {
+    font-size: 0.95rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  #trashModal .modal-form input,
+  #trashModal .modal-form select,
+  #trashModal .modal-form textarea {
+    font-size: 16px !important; /* evita zoom en iOS */
+    padding: 10px 12px !important;
+    margin-bottom: 8px !important;
+  }
+
+  #trashModal .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+
+  #trashModal .field-label {
+    font-size: 0.7rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  #trashModal .date-trigger {
+    padding: 10px 12px !important;
+    font-size: 0.85rem !important;
+  }
+
+  #trashModal .quote-calendar {
+    padding: 10px !important;
+    margin-top: 4px !important;
+  }
+
+  #trashModal .qc-day {
+    font-size: 0.75rem !important;
+    aspect-ratio: 1/1 !important;
+  }
+
+  #trashModal .form-actions {
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 8px 0 0 !important;
+  }
+
+  #trashModal .form-actions button,
+  #trashModal .form-actions a {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Botón cerrar */
+  #trashModal .modal-close {
+    top: 8px !important;
+    right: 8px !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.8rem !important;
+    z-index: 60 !important;
+  }
+
+  /* Copy box */
+  #trashModal .copy-box {
+    font-size: 0.8rem !important;
+    padding: 10px !important;
+    max-height: 180px !important;
+  }
+
+  #trashModal #tqCopyBtn {
+    padding: 10px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Flechas del slider */
+  #trashModal .modal-arrow {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.7rem !important;
+  }
+
+  #trashModal .modal-arrow.left {
+    left: 6px !important;
+  }
+
+  #trashModal .modal-arrow.right {
+    right: 6px !important;
+  }
+
+  #trashModal .modal-dots {
+    bottom: 6px !important;
+    gap: 6px !important;
+  }
+
+  #trashModal .modal-dot {
+    width: 6px !important;
+    height: 6px !important;
+  }
+}
+
+/* ===== FIX: TRASH CARD RESPONSIVE (horizontal overflow) ===== */
+@media (max-width: 880px) {
+  .trash-main-card {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto 1fr auto !important;
+    border-radius: 12px !important;
+  }
+
+  .trash-card-left {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(77,166,255,0.15) !important;
+    padding: 16px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  .trash-card-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .trash-card-icon i {
+    font-size: 1.4rem !important;
+  }
+
+  .trash-card-info h3 {
+    font-size: 0.9rem !important;
+  }
+
+  .trash-card-price {
+    font-size: 1.6rem !important;
+  }
+
+  .trash-card-features {
+    padding: 14px 16px !important;
+    gap: 8px !important;
+  }
+
+  .trash-card-img {
+    min-height: 180px !important;
+    height: 180px !important;
+    order: 2 !important;
+  }
+
+  .trash-pkg-btn {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin: 12px 16px 16px !important;
+    width: calc(100% - 32px) !important;
+    justify-content: center !important;
+  }
+
+  .trash-steps-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .trash-step {
+    padding: 18px 12px !important;
+  }
+
+  .trash-combo-cta {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 16px !important;
+  }
+
+  .trash-combo-cta p {
+    flex-direction: column !important;
+    gap: 4px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .trash-steps-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .trash-card-left {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .trash-card-features .pkg-feature {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ===== ELIMINAR DESBORDAMIENTO HORIZONTAL EN MÓVIL ===== */
+@media (max-width: 900px) {
+  /* Forzar que el body no se desborde en móvil */
+  html,
+  body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* Aplicar a todos los elementos hijos para que no se salgan */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ajustes específicos para el navbar */
+  .nav-container {
+    padding: 0 12px !important;
+    height: 70px !important;
+    gap: 8px !important;
+  }
+
+  .logo {
+    min-width: unset !important;
+    gap: 6px !important;
+  }
+
+  .logo-combined {
+    height: 48px !important;
+  }
+
+  .logo-icon {
+    height: 36px !important;
+  }
+
+  .logo-text-img {
+    height: 36px !important;
+  }
+
+  .nav-actions .btn-primary {
+    font-size: 0.7rem !important;
+    padding: 0.4em 0.8em !important;
+  }
+
+  /* Hero slider */
+  .hero {
+    overflow: hidden !important;
+  }
+
+  .hero-slides .slide {
+    background-size: cover !important;
+    background-position: center !important;
+    width: 100% !important;
+  }
+
+  /* Contenedores anchos */
+  .services,
+  .trash-standalone,
+  .footer-top,
+  .strip-items {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Imágenes */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Tarjetas de servicios */
+  .package-card,
+  .package-card.featured,
+  .package-card.premium {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
+
+  .package-left {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  /* Slider before/after */
+  .ba-container {
+    max-width: 100% !important;
+    height: 280px !important;
+  }
+
+  .ba-after,
+  .ba-before {
+    background-size: contain !important;
+  }
+}
+
+/* ===== QUITAR ZOOM A LA IMAGEN DEL PRIMER SLIDE EN PC ===== */
+@media (min-width: 901px) {
+  /* Usamos data-bg como selector más específico */
+  .hero-slides .slide[data-bg="logos/fondo.jpeg"] {
+    background-size: contain !important;
+    background-position: center center !important;
+    background-color: #01020a !important;
+    background-repeat: no-repeat !important;
+  }
 }
