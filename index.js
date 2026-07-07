@@ -19,6 +19,7 @@ const sectionObserver = new IntersectionObserver(entries => {
       const id = entry.target.id;
       navLinks.forEach(link => {
         const matches = link.dataset.section === id ||
+          (id === 'about' && link.dataset.section === 'about') ||
           (id === 'services' && link.dataset.section === 'services') ||
           (id === 'trash-service' && link.dataset.section === 'trash-service');
         link.classList.toggle('active', matches);
@@ -314,6 +315,8 @@ function closeModal() {
   modal.classList.remove('open');
   document.body.style.overflow = '';
   clearInterval(mTimer);
+  modalBox.classList.remove('maximized');
+  document.getElementById('modalMaximize').innerHTML = '<i class="fas fa-expand"></i>';
   document.getElementById('modalForm').classList.remove('active');
   document.getElementById('formCopy').classList.remove('active');
   document.getElementById('quoteForm').style.display = '';
@@ -324,6 +327,13 @@ function closeModal() {
 modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// Maximize service modal
+const modalMaxBtn = document.getElementById('modalMaximize');
+modalMaxBtn.addEventListener('click', () => {
+  const isMax = modalBox.classList.toggle('maximized');
+  modalMaxBtn.innerHTML = isMax ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
+});
 
 document.getElementById('modalBookBtn').addEventListener('click', () => {
   document.querySelector('.modal-info').style.display = 'none';
@@ -665,7 +675,7 @@ document.querySelectorAll('.ba-tab').forEach(tab => {
   const trashCopy     = document.getElementById('tqFormCopy');
 
   // Slider images
-  const trashImages = ['Our services/trash clean/1.jpeg', 'Our services/trash clean/2.jpeg'];
+  const trashImages = ['Our services/trash clean/1.jpeg', 'Our services/trash clean/2.jpeg', 'Our services/trash clean/3.jpeg'];
   const slidesEl    = document.getElementById('trashModalSlides');
   const dotsEl      = document.getElementById('trashModalDots');
   let tCurrent = 0, tTimer = null;
@@ -722,6 +732,8 @@ document.querySelectorAll('.ba-tab').forEach(tab => {
     trashModal.classList.remove('open');
     document.body.style.overflow = '';
     clearInterval(tTimer);
+    trashModalBox.classList.remove('maximized');
+    document.getElementById('trashModalMaximize').innerHTML = '<i class="fas fa-expand"></i>';
     trashInfo.style.display  = '';
     trashFooter.style.display = '';
     trashForm.classList.remove('active');
@@ -741,6 +753,13 @@ document.querySelectorAll('.ba-tab').forEach(tab => {
   trashClose.addEventListener('click', closeTrashModal);
   trashModal.addEventListener('click', e => { if (e.target === trashModal) closeTrashModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && trashModal.classList.contains('open')) closeTrashModal(); });
+
+  // Maximize trash modal
+  const trashMaxBtn = document.getElementById('trashModalMaximize');
+  trashMaxBtn.addEventListener('click', () => {
+    const isMax = trashModalBox.classList.toggle('maximized');
+    trashMaxBtn.innerHTML = isMax ? '<i class="fas fa-compress"></i>' : '<i class="fas fa-expand"></i>';
+  });
 
   // Book button shows form
   document.getElementById('trashModalBookBtn').addEventListener('click', () => {

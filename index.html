@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -32,6 +32,7 @@
 </a>
       <nav class="nav-links">
         <a href="#home" class="nav-link" data-section="home">Home</a>
+        <a href="#about" class="nav-link" data-section="about">About</a>
         <div class="nav-dropdown">
           <a href="#services" class="nav-link" data-section="services">Services <i class="fas fa-chevron-down nav-chevron"></i></a>
           <div class="dropdown-menu">
@@ -54,6 +55,7 @@
     </div>
     <div class="mobile-menu" id="mobileMenu">
       <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#trash-service">Additional Services</a>
       <a href="#services" class="btn-primary glow-on-hover" style="margin-top:10px;justify-content:center"><i class="fas fa-calendar-days"></i> Book Now</a>
@@ -126,7 +128,7 @@
 
       <!-- ENHANCED -->
       <div class="package-card featured" data-service="enhanced" data-price="80" data-duration="105"
-        data-images="Services/Enhanced/1.jpg|Services/Enhanced/2.jpg|Services/Enhanced/3.jpg|Services/Enhanced/4.webp|Our services/trash clean/1.jpeg|Our services/trash clean/2.jpeg"
+        data-images="Services/Enhanced/1.jpg|Services/Enhanced/2.jpg|Services/Enhanced/3.jpg|Services/Enhanced/4.webp"
         data-before="Our services/Interior Detailing/imagenes/4.jpeg"
         data-after="Our services/Interior Detailing/imagenes/5.jpeg"
         data-title="Enhanced Detail"
@@ -267,8 +269,8 @@
         data-highlights="High-pressure rinse & scrub|Hospital-grade disinfectant|Odor eliminator spray|Interior & exterior clean|~30 minutes per bin">
 
         <div class="trash-card-left">
-          <div class="trash-card-icon">
-            <i class="fas fa-trash-can"></i>
+        <div class="trash-card-icon">
+            <img src="Logos/trash.png" alt="Trash" class="trash-logo-img" />
           </div>
           <div class="trash-card-info">
             <h3>TRASH CAN<br>CLEANING</h3>
@@ -284,7 +286,7 @@
           <div class="pkg-feature combo-feature"><i class="fas fa-plus-circle"></i><span>Book with any auto detail and <strong>save time</strong></span></div>
         </div>
 
-        <div class="trash-card-img" style="background-image: url('Our%20services/trash%20clean/1.jpeg')"></div>
+        <div class="trash-card-img" style="background-image: url('Our%20services/trash%20clean/3.jpeg')"></div>
 
         <button class="pkg-btn trash-pkg-btn glow-on-hover">Book Now</button>
       </div>
@@ -329,21 +331,67 @@
     </div>
   </section>
 
+  <!-- ABOUT SECTION -->
+  <section class="about-section" id="about">
+    <div class="about-banner">
+
+      <!-- LEFT: info + email -->
+      <div class="about-banner-left">
+        <span class="about-tag"><i class="fas fa-star"></i> About Us</span>
+        <h2>About Davila's <span>Auto Detailing</span></h2>
+        <p>Locally owned, built by two young entrepreneurs. Professional results at honest prices &mdash; we come to you.</p>
+        <div class="about-email-wrap">
+          <label class="about-email-label">Get in touch &mdash; send us your email</label>
+          <div class="about-email-row">
+            <input type="email" class="about-email-input" placeholder="your@email.com" />
+            <button class="about-email-btn glow-on-hover"><i class="fas fa-paper-plane"></i></button>
+          </div>
+          <p class="about-email-note"><i class="fas fa-shield-halved"></i> We'll reach out to schedule your service.</p>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <div class="about-banner-divider"></div>
+
+      <!-- RIGHT: benefits + social + logo -->
+      <div class="about-banner-right">
+        <div class="about-right-top">
+          <div class="about-right-content">
+            <p class="about-benefits-title">Why Choose Us?</p>
+            <ul class="about-benefits-list">
+              <li><i class="fas fa-circle-check"></i> Professional detailing experience</li>
+              <li><i class="fas fa-circle-check"></i> Affordable pricing</li>
+              <li><i class="fas fa-circle-check"></i> Friendly, reliable service</li>
+              <li><i class="fas fa-circle-check"></i> Attention to every detail</li>
+              <li><i class="fas fa-circle-check"></i> We come to you</li>
+            </ul>
+            <div class="about-social-row">
+              <a href="https://www.facebook.com/share/1DHa3tu1pC/?mibextid=wwXIfr" target="_blank" class="about-social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/davilasdetailingco?igsh=eHhzdzAweGZ0YWx5&utm_source=qr" target="_blank" class="about-social-btn instagram"><i class="fab fa-instagram"></i></a>
+              <a href="sms:+1?body=Hi%2C%20I%27d%20like%20to%20book%20a%20service" class="about-social-btn sms"><i class="fas fa-comment-sms"></i></a>
+            </div>
+          </div>
+          <img src="Logos/logo hd.png" alt="Davila's" class="about-logo-right" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- FACEBOOK FLOAT -->
-  <a href="https://www.facebook.com/share/18xFt5k7B8/?mibextid=wwXIfr" class="float-btn facebook-float" target="_blank" aria-label="Book on Facebook">
-    <i class="fab fa-facebook-f"></i><span>Book on Facebook</span>
-    <div class="scan-line"></div>
+  <a href="https://www.facebook.com/share/1DHa3tu1pC/?mibextid=wwXIfr" class="social-float facebook-float" target="_blank" aria-label="Facebook">
+    <i class="fab fa-facebook-f"></i>
   </a>
   <!-- INSTAGRAM FLOAT -->
-  <a href="https://www.instagram.com/emerald_autodetailing12?igsh=ZHlkOWl3OHluODk2&utm_source=qr" class="float-btn instagram-float" target="_blank" aria-label="Book on Instagram">
-    <i class="fab fa-instagram"></i><span>Book on Instagram</span>
-    <div class="scan-line"></div>
+  <a href="https://www.instagram.com/davilasdetailingco?igsh=eHhzdzAweGZ0YWx5&utm_source=qr" class="social-float instagram-float" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
   </a>
 
   <!-- TRASH MODAL (now matches service modal structure) -->
   <div class="modal-backdrop" id="trashModal">
     <div class="modal-box" id="trashModalBox">
       <button class="modal-close" id="trashModalClose"><i class="fas fa-times"></i></button>
+      <button class="modal-maximize-btn" id="trashModalMaximize"><i class="fas fa-expand"></i></button>
 
       <!-- Slider -->
       <div class="modal-slider">
@@ -413,8 +461,8 @@
           <textarea class="copy-box" id="tqCopyBox" readonly rows="6"></textarea>
           <div class="form-actions">
             <button type="button" id="tqCopyBtn" class="glow-on-hover"><i class="fas fa-copy"></i> Copy</button>
-            <a href="https://www.facebook.com/share/18xFt5k7B8/?mibextid=wwXIfr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="https://www.instagram.com/emerald_autodetailing12?igsh=ZHlkOWl3OHluODk2&utm_source=qr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/share/1DHa3tu1pC/?mibextid=wwXIfr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/davilasdetailingco?igsh=eHhzdzAweGZ0YWx5&utm_source=qr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
             <a id="tqSmsBtn" class="btn-primary glow-on-hover" target="_blank"><i class="fas fa-comment-sms"></i> SMS <span class="mobile-only-tag">Mobile Only</span></a>
           </div>
         </div>
@@ -426,6 +474,7 @@
   <div class="modal-backdrop" id="serviceModal">
     <div class="modal-box">
       <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      <button class="modal-maximize-btn" id="modalMaximize"><i class="fas fa-expand"></i></button>
       <div class="modal-slider">
         <div class="modal-slides" id="modalSlides"></div>
         <button class="modal-arrow left" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
@@ -520,8 +569,8 @@
           <textarea class="copy-box" id="copyBox" readonly rows="7"></textarea>
           <div class="form-actions">
             <button type="button" id="copyBtn" class="glow-on-hover"><i class="fas fa-copy"></i> Copy</button>
-            <a href="https://www.facebook.com/share/18xFt5k7B8/?mibextid=wwXIfr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="https://www.instagram.com/emerald_autodetailing12?igsh=ZHlkOWl3OHluODk2&utm_source=qr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/share/1DHa3tu1pC/?mibextid=wwXIfr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.instagram.com/davilasdetailingco?igsh=eHhzdzAweGZ0YWx5&utm_source=qr" class="btn-primary glow-on-hover" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
             <a id="smsBtnBoth" class="btn-primary glow-on-hover" target="_blank"><i class="fas fa-comment-sms"></i> Send SMS <span class="mobile-only-tag"><i class="fab fa-apple"></i><i class="fab fa-android"></i> Mobile Only</span></a>
           </div>
         </div>
@@ -532,22 +581,32 @@
   <!-- STAR GENERATOR -->
   <script>
   (function(){
-    function stars(n){
-      var s='';
-      for(var i=0;i<n;i++){
-        if(i)s+=', ';
-        s+=Math.random()*2000+'px '+Math.random()*2000+'px #FFF';
-      }
-      return s;
-    }
-    var st=document.createElement('style');
-    st.textContent='#stars{box-shadow:'+stars(700)+'}'+
-      '#stars2{box-shadow:'+stars(200)+'}'+
-      '#stars3{box-shadow:'+stars(100)+'}'+
-      '#stars:after{box-shadow:'+stars(700)+'}'+
-      '#stars2:after{box-shadow:'+stars(200)+'}'+
-      '#stars3:after{box-shadow:'+stars(100)+'}';
+    var st = document.createElement('style');
     document.head.appendChild(st);
+    function gen() {
+      var w = window.innerWidth, h = window.innerHeight;
+      function stars(n) {
+        var s = '';
+        for (var i = 0; i < n; i++) {
+          if (i) s += ', ';
+          s += (Math.random()*w).toFixed(0)+'px '+(Math.random()*h).toFixed(0)+'px #FFF';
+        }
+        return s;
+      }
+      st.textContent =
+        '#stars{box-shadow:'+stars(700)+'}'+
+        '#stars2{box-shadow:'+stars(200)+'}'+
+        '#stars3{box-shadow:'+stars(100)+'}'+
+        '#stars:after{box-shadow:'+stars(700)+'}'+
+        '#stars2:after{box-shadow:'+stars(200)+'}'+
+        '#stars3:after{box-shadow:'+stars(100)+'}';
+    }
+    gen();
+    var resizeTimer;
+    window.addEventListener('resize', function(){
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(gen, 200);
+    });
   })();
   </script>
 
